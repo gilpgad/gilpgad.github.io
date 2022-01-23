@@ -1,0 +1,52 @@
+<muestra-codigo>
+ <div>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@param</span><span style="color: #008000;">
+   </span><span style="color: #267f99;">{string | URL}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">sw</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">regSw</span>(<span
+     style="color: #001080;">sw</span>) {</div>
+  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; <span
+     style="color: #008000;">/* Registra el service worker,</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* principal. */</span></div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #a31515;">"serviceWorker"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">in</span> <span
+     style="color: #001080;">navigator</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">registro</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #001080;">navigator</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+    style="color: #0070c1;">serviceWorker</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">register</span>(<span
+     style="color: #001080;">sw</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+      style="color: #001080;">sw</span>, <span
+       style="color: #a31515;">"registrado."</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #0070c1;">registro</span>)</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; <span style="color: #795e26;">alert</span>(<span
+     style="color: #001080;">e</span>.<span
+     style="color: #001080;">message</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>

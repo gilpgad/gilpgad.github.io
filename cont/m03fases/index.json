@@ -1,0 +1,108 @@
+{
+ "type": "A",
+ "title": "Fases del proceso de diseño",
+ "description": "Contenido de la lección «3. Fases del proceso de diseño».",
+ "printDescription": "Página para imprimir de la lección «3. Fases del proceso de diseño».",
+ "listado": [
+  {
+   "name": "mAinstrucciones.html",
+   "title": "Instrucciones",
+   "description": "Instrucciones para crear, ejecutar y probar el ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mBarchivos.html",
+   "title": "Archivos",
+   "description": "Archivos que forman el ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mCjsconfigJson.html",
+   "title": "jsconfig.json",
+   "description": "Código del archivo «jsconfig.json» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mDsiteWebmanifest.html",
+   "title": "site.webmanifest",
+   "description": "Código del archivo «site.webmanifest» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mEswJs.html",
+   "title": "sw.js",
+   "description": "Código del archivo «sw.js» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mFregSwJs.html",
+   "title": "lib/regSw.js",
+   "description": "Código del archivo «lib/regSw.js» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mGconfigJs.html",
+   "title": "js/config.js",
+   "description": "Código del archivo «js/config.js» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mHindexHtml.html",
+   "title": "index.html",
+   "description": "Código del archivo «index.html» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mIestilosCss.html",
+   "title": "css/estilos.css",
+   "description": "Código del archivo «css/estilos.css» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mJfaviconIco.html",
+   "title": "favicon.ico",
+   "description": "Código del archivo «favicon.ico» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mKicono2048png.html",
+   "title": "img/icono2048.png",
+   "description": "Código del archivo «img/icono2048.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mLmaskable_icon_x48png.html",
+   "title": "img/maskable_icon_x48.png",
+   "description": "Código del archivo «img/maskable_icon_x48.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mMmaskable_icon_x72png.html",
+   "title": "img/maskable_icon_x72.png",
+   "description": "Código del archivo «img/maskable_icon_x72.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mNmaskable_icon_x96png.html",
+   "title": "img/maskable_icon_x96.png",
+   "description": "Código del archivo «img/maskable_icon_x96.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mOmaskable_icon_x128png.html",
+   "title": "img/maskable_icon_x128.png",
+   "description": "Código del archivo «img/maskable_icon_x128.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mPmaskable_icon_x192png.html",
+   "title": "img/maskable_icon_x192.png",
+   "description": "Código del archivo «img/maskable_icon_x192.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mQmaskable_icon_x384png.html",
+   "title": "img/maskable_icon_x384.png",
+   "description": "Código del archivo «img/maskable_icon_x384.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mRmaskable_icon_x512png.html",
+   "title": "img/maskable_icon_x512.png",
+   "description": "Código del archivo «img/maskable_icon_x512.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mSmaskable_iconPng.html",
+   "title": "img/maskable_icon.png",
+   "description": "Código del archivo «img/maskable_icon.png» del ejemplo de Fases del proceso de diseño."
+  },
+  {
+   "name": "mTresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «3. Fases del proceso de diseño»."
+  }
+ ]
+}

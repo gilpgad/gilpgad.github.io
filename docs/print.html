@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Arte digital - GilPG AD</title>
+ <meta name="description" content="Página para imprimir todo el contenido de GilPG AD, que introduce al diseño de imágenes digitales.">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --colScrollbar: #CFD8DC;
+  --colThumb: #90a4ae;
+  --colThumbActivo: #3f3f3f;
+  --anchoThumb: 7px;
+  --borderRadiusThumb: 3.5px;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+  scrollbar-width: thin;
+  scrollbar-color: var(--colThumb) var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar {
+  width: var(--anchoThumb);
+  height: var(--anchoThumb);
+ }
+
+ body::-webkit-scrollbar-track {
+  background: var(--colScrollbar);
+ }
+
+ body::-webkit-scrollbar-thumb {
+  background-color: var(--colThumb);
+  border-radius: var(--borderRadiusThumb);
+ }
+
+ body::-webkit-scrollbar-thumb:active {
+  background-color: var(--colThumbActivo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+
+  .pruebaDeEscritorio {
+   page-break-before: always;
+  }
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla3,
+ .pruebaDeEscritorio table.tabla3 th,
+ .pruebaDeEscritorio table.tabla3 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="sitio">Arte digital</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p class="autor">por Gilberto Pacheco Gallegos</p>
+ <ul>
+  <li>
+   <p>Introducción al diseño de imágenes digitales.</p>
+  </li>
+ </ul>
+ <section class="noPrint">
+ <h1>Instrucciones de navegación</h1>
+ <ul>
+  <li>
+   <p>
+    Los siguientes controles te permitirán navegar por todo el contenido del
+    sitio.
+   </p>
+   <dl>
+    <dt>
+     <button type="button" title="Cierra">&#x2715;</button>
+    </dt>
+    <dd>
+     <p>Oculta el menú de navegación.</p>
+    </dd>
+    <dt>
+     <button type="button" title="Menú">&#x2630;</button>
+    </dt>
+    <dd>
+     <p>Muestra el menú de navegación.</p>
+    </dd>
+    <dt>
+     <span class="anterior" title="Página anterior">◀</span>
+    </dt>
+    <dt>
+     <kbd>←</kbd> (Tecla flecha a la izquierda)
+    </dt>
+    <dt>
+     Swipe hacia la derecha
+    </dt>
+    <dd>
+     <p>Regresa a la página anterior.</p>
+    </dd>
+    <dt>
+     <span class="siguiente" title="Página siguiente">▶</span>
+    </dt>
+    <dt>
+     <kbd>→</kbd> (Tecla flecha a la derecha)
+    </dt>
+    <dt>
+     Swipe hacia la izquierda
+    </dt>
+    <dd>
+     <p>Avanza a la página siguiente.</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</section>
+ <nav>
+  <h1>Lecciones</h1>
+  
+   <ol type="1">
+    <li>
+     <p>
+      <a href="/m01conceptos">Conceptos básicos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos">Elementos del diseño gráfico</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases">Fases del proceso de diseño</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m04composicion.html">Composición</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos">Derechos de autor</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section>
+         <h1 class="leccion">1. Conceptos básicos</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan conceptos básicos del diseño gráfico.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m01conceptos/mAintroDisGraf.html">Introducción al diseño gráfico</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mBdisGraf.html"><dfn>Diseño gráfico</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mCfunsDisGraf.html">Funciones </a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mDapsDisGraf.html">Aplicaciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mEintroCreat.html">Introducción a la creatividad</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mFcreat.html"><dfn>Creatividad</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mGfunCreat.html">Functiones de la creatividad</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01conceptos/mHapsCreat.html">Aplicaciones de la creatividad</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Introducción al diseño gráfico</h1>
+      </section>
+     <section >
+         <h1 >B. <dfn>Diseño gráfico</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Profesión y disciplina académica cuya actividad consiste en proyectar
+    comunicaciones visuales destinadas a transmitir mensajes específicos a
+    grupos sociales, con objetivos determinados.
+   </p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico">https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >C. Funciones </h1><div class="lectura">
+ <dl>
+  <dt><dfn>Función comunicativa</dfn></dt>
+  <dd>
+   <p>
+    El diseño gráfico ordena la información para hacerla más clara y legible a
+    la vista del receptor.
+   </p>
+  </dd>
+  <dt><dfn>Función publicitaria</dfn></dt>
+  <dd>
+   <p>Intenta convencer al receptor con un mensaje visualmente atractivo.</p>
+  </dd>
+  <dt><dfn>Función formativa</dfn></dt>
+  <dd>
+   <p>El orden del mensaje puede tener a fines educativos y docentes.</p>
+  </dd>
+  <dt><dfn>Función estética</dfn></dt>
+  <dd>
+   <p>
+    Forma y funcionalidad son dos elementos propios del diseño gráfico, cuyo
+    producto tiene que servir para mejorar algún aspecto de nuestra vida y
+    también para hacernos más agradable su uso.
+   </p>
+  </dd>
+ </dl>
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico">https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Aplicaciones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Diseño gráfico de identidad visual.</p>
+  </li>
+  <li>
+   <p>Marketing y diseño gráfico publicitario.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico de la interfaz de usuario.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico en publicaciones editoriales.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico de packaging.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico de movimiento.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico ambiental.</p>
+  </li>
+  <li>
+   <p>Diseño gráfico para arte e ilustración.</p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico">https://es.wikipedia.org/wiki/Dise%C3%B1o_gr%C3%A1fico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. Introducción a la creatividad</h1>
+      </section>
+     <section >
+         <h1 >F. <dfn>Creatividad</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Capacidad de generar nuevas ideas o conceptos, de nuevas asociaciones entre
+    ideas y conceptos conocidos, que habitualmente producen soluciones
+    originales.
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. Functiones de la creatividad</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Subsistencia.</p>
+  </li>
+  <li>
+   <p>Arte.</p>
+  </li>
+  <li>
+   <p>Innovación.</p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://www.importancia.org/creatividad.php">https://www.importancia.org/creatividad.php</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. Aplicaciones de la creatividad</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Adoptar un nuevo enfoque al considerar un problema.</p>
+  </li>
+  <li>
+   <p>Diseñar o modificar un proceso o sistema.</p>
+  </li>
+  <li>
+   <p>Inventar un nuevo producto o servicio.</p>
+  </li>
+  <li>
+   <p>Encontrar nuevos usos para cosas existentes.</p>
+  </li>
+  <li>
+   <p>Mejorar las cosas.</p>
+  </li>
+  <li>
+   <p>Inventar o redefinir un concepto.</p>
+  </li>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://www.importancia.org/creatividad.php">https://www.importancia.org/creatividad.php</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">2. Elementos del diseño gráfico</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se introducen los elementos del diseño gráfico.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m02elementos/mAtexto.html">Texto</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mBformas.html"><dfn>Forma</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mCcolor.html">Color</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mDimagen.html">Imagen</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mEfigura.html"><dfn>Figura</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mFfondo.html"><dfn>Fondo</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mGpregnancia.html"><dfn>Pregnancia</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mHsimplicidad.html"><dfn>Simplicidad</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mIproximidad.html">Proximidad</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mJsemejanza.html">Semejanza</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mKcontraste.html"><dfn>Contraste</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m02elementos/mLcontinuidad.html"><dfn>Continuidad</dfn></a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Texto</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Se puede usar como un elemento gráfico.</p>
+  </li>
+  <li>
+   <p>
+    En ocasiones hay que desarrollar una nueva familia con características y
+    colores propios.
+   </p>
+  </li>
+  <li>
+   <p>Los podemos encontrar en logotipos.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Texto con formato visual" src="/img/m02elementos/iloveyou.jpg">
+</figure>
+      </section>
+     <section >
+         <h1 >B. <dfn>Forma</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Cualquier cosa que está definida por límites.</p>
+  </li>
+  <li>
+   <p>2 categorías:</p>
+   <dl>
+    <dt><dfn>Geométricas</dfn></dt>
+    <dd>
+     <p>
+      Geométricas, uniformes, perfectas, como círculos, cuadrados, triángulos.
+     </p>
+    </dd>
+    <dt><dfn>Orgánicas</dfn></dt>
+    <dd>
+     <p>No tienen reglas.</p>
+    </dd>
+   </dl>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Texto con formato visual" src="/img/m02elementos/formas.png">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://blog.hubspot.es/marketing/elementos-diseno-grafico">https://blog.hubspot.es/marketing/elementos-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >C. Color</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Usa colores opuestos o contiguos en el círculo cromático.</p>
+  </li>
+  <li>
+   <p>
+    Considera usar una herramienta en línea gratuita para la elaboración de
+    esquemas como:
+   </p>
+   <ul>
+    <li>
+     <p>
+      <a href="https://paletton.com/" target="_blank"
+        rel="nooper">https://paletton.com/</a>
+     </p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Esquemas de colores" src="/img/m02elementos/color.gif">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente:
+     <a target="_blank" rel="nooper"
+       href="https://blog.hubspot.es/marketing/elementos-diseno-grafico">https://blog.hubspot.es/marketing/elementos-diseno-grafico</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >D. Imagen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Crear imágenes es el objetivo principal del diseño gráfico.</p>
+  </li>
+  <li>
+   <p>También se pueden añadir imágenes ya existentes.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img alt="Esquemas de colores" src="/img/m02elementos/Imagen.jpg">
+</figure>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <small>
+     Fuente de la imagen:
+     <a target="_blank" rel="nooper"
+       href="https://listas.20minutos.es/lista/elementos-del-diseno-web-408618/">https://listas.20minutos.es/lista/elementos-del-diseno-web-408618/</a>
+    </small>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >E. <dfn>Figura</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >F. <dfn>Fondo</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. <dfn>Pregnancia</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >H. <dfn>Simplicidad</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. Proximidad</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. Semejanza</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >K. <dfn>Contraste</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >L. <dfn>Continuidad</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En esta lección se presentan los siguientes temas:
+   </p>
+   <ul>
+    <li>
+     <p>Definición de PWA.</p>
+    </li>
+    <li>
+     <p>Requerimientos de instalación y uso de una PWA.</p>
+    </li>
+     <p>Navegadores compatibles con PWA.</p>
+    </li>
+    <li>
+     <p>Herramientas de desarrollo.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section>
+         <h1 class="leccion">3. Fases del proceso de diseño</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan las fases del proceso de diseño.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m03fases/mAinstrucciones.html">Instrucciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mBarchivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mCjsconfigJson.html">jsconfig.json</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mDsiteWebmanifest.html">site.webmanifest</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mEswJs.html">sw.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mFregSwJs.html">lib/regSw.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mGconfigJs.html">js/config.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mHindexHtml.html">index.html</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mIestilosCss.html">css/estilos.css</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mJfaviconIco.html">favicon.ico</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mKicono2048png.html">img/icono2048.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mLmaskable_icon_x48png.html">img/maskable_icon_x48.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mMmaskable_icon_x72png.html">img/maskable_icon_x72.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mNmaskable_icon_x96png.html">img/maskable_icon_x96.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mOmaskable_icon_x128png.html">img/maskable_icon_x128.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mPmaskable_icon_x192png.html">img/maskable_icon_x192.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mQmaskable_icon_x384png.html">img/maskable_icon_x384.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mRmaskable_icon_x512png.html">img/maskable_icon_x512.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mSmaskable_iconPng.html">img/maskable_icon.png</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m03fases/mTresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Instrucciones</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="/src/m05pwaBasica/pwa.zip" download>Descarga el ejemplo.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Revisa el proyecto en Replit con la URl
+    <a href="https://replit.com/@GilbertoPachec3/pwa?v=1" rel="nooper"
+      target="_blank">https://replit.com/@GilbertoPachec3/pwa?v=1</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Prueba e instala el ejemplo con la URl
+    <a href="https://pwa.gilbertopachec3.repl.co/" rel="nooper"
+      target="_blank">https://pwa.gilbertopachec3.repl.co/</a>
+   </p>
+  </li>
+ </ul>
+ <ol>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1RiRkApBqQE6A4-APu7p18_DHa2aVRcfn/view?usp=sharing"
+      target="_blank" rel="nooper">Crea los íconos del proyecto</a>
+    con
+    <a href="https://www.photopea.com/"
+      target="_blank" rel="nooper">https://www.photopea.com/</a>.
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1lI4TAJ_xRJpY6xqNnEzT4L214S_UggfB/view?usp=sharing"
+      target="_blank" rel="nooper">Crea los íconos enmascarables</a>
+    con
+    <a target="_blank"
+      href="https://maskable.app/">https://maskable.app/</a>
+    a partir del archivo «icono2048.png».
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1ujeNp8TaHjqqRXl_TFT0omUGymmFWTLm/view?usp=sharing"
+      target="_blank" rel="nooper">Usa o crea una cuenta de Google.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1dmifWNqm_gRmQuMEe67HqKBYzzDTwEHt/view?usp=sharing"
+      target="_blank" rel="nooper">Crea una cuenta de Replit usando la cuenta de
+     Google.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1MpT73tzI9tJDcgy1uH9eRtXVdKuF1D36/view?usp=sharing"
+      target="_blank" rel="nooper">Crea un proyecto <em>HTML, CSS, JS</em> en
+     Replit y edita o sube los archivos de este proyecto.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1pfI0ZZUbXxArDuACZIOeh_L7cQ5a3NsJ/view?usp=sharing"
+      target="_blank" rel="nooper">Depura el proyecto.</a>
+   </p>
+   <p>
+    Cada vez que publiques los cambios en los archivos, debes modificar el valor
+    de <var>VERSION</var> en el archivo «sw.js».
+   </p>
+   <p>
+    Recuerda usar la combinación de teclas
+    <strong><kbd>Ctrl</kbd>+<kbd>Mayúsculas</kbd>+<kbd>r</kbd></strong>
+    para forzar que se actualice el navegador en caso de que no se vean
+    los cambios.
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1d56ZzPMG0xZeGjlncx7ns8sOf4ZU86B0/view?usp=sharingg"
+      target="_blank">Crea la página de spotlight del proyecto.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1djpD_9jiaw6S71LMpJuwwSUs7hTEEyZz/view?usp=sharing"
+      target="_blank">Instala y usa tu PWA en Windows.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1jCM53PH_w20SKbMe7B6_FU-ilV9l30fh/view?usp=sharing"
+      target="_blank">Instala y usa tu PWA en Android.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/17Hnc_IcOL2HmSytSwHTi-tdPCyAHhQzr/view?usp=sharing"
+      target="_blank">Instala y usa tu PWA en iOS (iPhone y iPad).</a>
+   </p>
+  </li>
+ </ol>
+</div>
+      </section>
+     <section >
+         <h1 >B. Archivos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>css</p>
+   <ul>
+    <li>
+     <p><a href="mIestilosCss.html">estilos.css</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>img</p>
+   <ul>
+    <li>
+     <p><a href="mKicono2048png.html">icono2048.png</a></p>
+    </li>
+    <li>
+     <p><a href="mLmaskable_icon_x48png.html">maskable_icon_x48.png</a></p>
+    </li>
+    <li>
+     <p><a href="mMmaskable_icon_x72png.html">maskable_icon_x72.png</a></p>
+    </li>
+    <li>
+     <p><a href="mNmaskable_icon_x96png.html">maskable_icon_x96.png</a></p>
+    </li>
+    <li>
+     <p><a href="mOmaskable_icon_x128png.html">maskable_icon_x128.png</a></p>
+    </li>
+    <li>
+     <p><a href="mPmaskable_icon_x192png.html">maskable_icon_x192.png</a></p>
+    </li>
+    <li>
+     <p><a href="mQmaskable_icon_x384png.html">maskable_icon_x384.png</a></p>
+    </li>
+    <li>
+     <p><a href="mRmaskable_icon_x512png.html">maskable_icon_x512.png</a></p>
+    </li>
+    <li>
+     <p><a href="mSmaskable_iconPng.html">maskable_icon.png</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>js</p>
+   <ul>
+    <li>
+     <p><a href="mGconfigJs.html">config.js</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>lib</p>
+   <ul>
+    <li>
+     <p><a href="mFregSwJs.html">regSw.js</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p><a href="mJfaviconIco.html">favicon.ico</a></p>
+  </li>
+  <li>
+   <p><a href="mHindexHtml.html">index.html</a></p>
+  </li>
+  <li>
+   <p><a href="mCjsconfigJson.html">jsconfig.json</a></p>
+  </li>
+  <li>
+   <p><a href="mDsiteWebmanifest.html">site.webmanifest</a></p>
+  </li>
+  <li>
+   <p><a href="mEswJs.html">sw.js</a></p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >C. jsconfig.json</h1><muestra-codigo>
+ <div>
+  <div>{</div>
+  <div>&nbsp;<span style="color: #0451a5;">"compilerOptions"</span>: {</div>
+  <div>&nbsp; <span style="color: #0451a5;">"checkJs"</span>: <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp; <span style="color: #0451a5;">"module"</span>: <span
+     style="color: #a31515;">"ES6"</span>,</div>
+  <div>&nbsp; <span style="color: #0451a5;">"moduleResolution"</span>: <span
+     style="color: #a31515;">"classic"</span>,</div>
+  <div>&nbsp; <span style="color: #0451a5;">"lib"</span>: [</div>
+  <div>&nbsp; &nbsp;<span style="color: #a31515;">"ES2015"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #a31515;">"WebWorker"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #a31515;">"DOM"</span></div>
+  <div>&nbsp; ]</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >D. site.webmanifest</h1><muestra-codigo>
+ <div>
+  <div>{</div>
+  <div>&nbsp;<span style="color: #0451a5;">"short_name"</span>: <span
+     style="color: #a31515;">"PWA"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"name"</span>: <span
+     style="color: #a31515;">"Ejemplo de PWA"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"start_url"</span>: <span
+     style="color: #a31515;">"/index.html"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"display"</span>: <span
+     style="color: #a31515;">"standalone"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"theme_color"</span>: <span
+     style="color: #a31515;">"#cbc693"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"background_color"</span>: <span
+     style="color: #a31515;">"#ffffff"</span>,</div>
+  <div>&nbsp;<span style="color: #0451a5;">"icons"</span>: [</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x48.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"48x48"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x72.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"72x72"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x96.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"96x96"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x128.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"128x128"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x192.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"192x192"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x384.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"384x384"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"512x512"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/maskable_icon.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"2730x2730"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"maskable"</span></div>
+  <div>&nbsp; },</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"src"</span>: <span
+     style="color: #a31515;">"/img/icono2048.png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"sizes"</span>: <span
+     style="color: #a31515;">"2048x2048"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"type"</span>: <span
+     style="color: #a31515;">"image/png"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0451a5;">"purpose"</span>: <span
+     style="color: #a31515;">"any"</span></div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;]</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >E. sw.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #008000;">/* Este archivo debe estar</span></div>
+  <div><span
+     style="color: #008000;">&nbsp;* colocado en la carpeta raíz del</span></div>
+  <div><span style="color: #008000;">&nbsp;* sitio.</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span></div>
+  <div><span style="color: #008000;">&nbsp;* Cualquier cambio en el</span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* contenido de este archivo hace</span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* que el service worker se</span></div>
+  <div><span style="color: #008000;">&nbsp;* reinstale.</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* Normalmente se cambia el número</span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* de la versión cuando cambia el</span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* contenido de los archivos. */</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">VERSION</span> = <span
+     style="color: #a31515;">"1.00"</span></div><br>
+  <div><span
+    style="color: #008000;">/** Nombre del archivo de cache. */</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">CACHE</span> = <span
+     style="color: #a31515;">"ejemploPWA"</span></div><br>
+  <div><span
+    style="color: #008000;">/** Archivos requeridos para que</span></div>
+  <div><span
+    style="color: #008000;">&nbsp;* la aplicación funcione fuera de</span></div>
+  <div><span style="color: #008000;">&nbsp;* línea.</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">ARCHIVOS</span> = [</div>
+  <div>&nbsp;<span style="color: #a31515;">"css/estilos.css"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"img/icono2048.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x48.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x72.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x96.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x128.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x192.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x384.png"</span>,</div>
+  <div>&nbsp;<span
+    style="color: #a31515;">"img/maskable_icon_x512.png"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"img/maskable_icon.png"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"js/config.js"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"lib/regSw.js"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"favicon.ico"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"index.html"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"site.webmanifest"</span>,</div>
+  <div>&nbsp;<span style="color: #a31515;">"/"</span></div>
+  <div>]</div>
+  <div><span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">self</span> <span
+     style="color: #0000ff;">instanceof</span></div>
+  <div>&nbsp;<span
+    style="color: #267f99;">ServiceWorkerGlobalScope</span>) {</div>
+  <div>&nbsp;<span
+    style="color: #008000;">// Evento al empezar a instalar</span></div>
+  <div>&nbsp;<span style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"install"</span>,</div>
+  <div>&nbsp; <span style="color: #795e26;">instala</span>)</div><br>
+  <div>&nbsp;<span
+    style="color: #008000;">// Evento al solicitar a la red</span></div>
+  <div>&nbsp;<span style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"fetch"</span>,</div>
+  <div>&nbsp; <span style="color: #795e26;">descargaDatos</span>)</div><br>
+  <div>&nbsp;<span
+    style="color: #008000;">// Evento cuando está activo.</span></div>
+  <div>&nbsp;<span style="color: #001080;">self</span>.<span
+     style="color: #795e26;">addEventListener</span>(<span
+     style="color: #a31515;">"activate"</span>,</div>
+  <div>&nbsp; <span style="color: #795e26;">activo</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">activo</span>() {</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; <span
+    style="color: #a31515;">"Service Worker activo."</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@param</span><span style="color: #008000;">
+   </span><span style="color: #267f99;">{ExtendableEvent}</span><span
+     style="color: #008000;"> </span><span
+      style="color: #001080;">evt</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">instala</span>(<span
+     style="color: #001080;">evt</span>) {</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; <span
+    style="color: #a31515;">"Service Worker instalando."</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">waitUntil</span>(<span
+     style="color: #795e26;">cargaCache</span>());</div>
+  <div>}</div><br>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+       style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+      style="color: #001080;">evt</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">descargaDatos</span>(<span
+     style="color: #001080;">evt</span>) {</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (</div>
+  <div>&nbsp; <span style="color: #001080;">evt</span>.<span
+     style="color: #0070c1;">request</span>.<span
+     style="color: #0070c1;">method</span> === <span
+     style="color: #a31515;">"GET"</span>) {</div>
+  <div>&nbsp; <span style="color: #001080;">evt</span>.<span
+     style="color: #795e26;">respondWith</span>(<span
+     style="color: #795e26;">usaCache</span>(<span
+     style="color: #001080;">evt</span>))</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">cargaCache</span>() {</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; <span
+    style="color: #a31515;">"Intentando cargar cache:"</span>,</div>
+  <div>&nbsp; <span style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span
+    style="color: #008000;">// Borra todos los chaches.</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">keys</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">keys</span>()</div>
+  <div>&nbsp;<span style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">key</span> <span
+      style="color: #0000ff;">of</span> <span
+       style="color: #0070c1;">keys</span>) {</div>
+  <div>&nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">delete</span>(<span
+     style="color: #0070c1;">key</span>)</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span
+    style="color: #008000;">// Carga el nuevo contenido.</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">cache</span> =</div>
+  <div>&nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">open</span>(<span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">cache</span>.<span
+     style="color: #795e26;">addAll</span>(<span
+     style="color: #0070c1;">ARCHIVOS</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.</div>
+  <div>&nbsp; <span style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Cache cargado:"</span>, <span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Versión:"</span>, <span
+     style="color: #0070c1;">VERSION</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #008000;">/** </span><span
+     style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+       style="color: #267f99;">{FetchEvent}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">evt</span><span
+      style="color: #008000;"> */</span>
+  </div>
+  <div><span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">usaCache</span>(<span
+     style="color: #001080;">evt</span>) {</div>
+  <div>&nbsp;<span
+    style="color: #008000;">// Busca el contenido del cache.</span></div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">cache</span> =</div>
+  <div>&nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #001080;">caches</span>.<span
+     style="color: #795e26;">open</span>(<span
+     style="color: #0070c1;">CACHE</span>)</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">response</span> =</div>
+  <div>&nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">cache</span>.<span
+     style="color: #795e26;">match</span>(<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #0070c1;">request</span>,</div>
+  <div>&nbsp; &nbsp;{ <span style="color: #001080;">ignoreSearch</span><span
+     style="color: #001080;">:</span> <span
+      style="color: #0000ff;">true</span> })</div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">response</span>) {</div>
+  <div>&nbsp; <span style="color: #008000;">/* Si lo encuentra, devuelve
+    el</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; &nbsp;* archivo del cache. */</span></div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #0070c1;">response</span></div>
+  <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; <span
+    style="color: #008000;">/* Si no lo encuentra, lo</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; &nbsp;* empieza a descargar de la red</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; &nbsp;* y devuelve la promesa. */</span></div>
+  <div>&nbsp; <span style="color: #af00db;">return</span> <span
+     style="color: #795e26;">fetch</span>(<span
+     style="color: #001080;">evt</span>.<span
+     style="color: #0070c1;">request</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >F. lib/regSw.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@param</span><span style="color: #008000;">
+   </span><span style="color: #267f99;">{string | URL}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">sw</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #af00db;">export</span> <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">regSw</span>(<span
+     style="color: #001080;">sw</span>) {</div>
+  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; <span
+     style="color: #008000;">/* Registra el service worker,</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; &nbsp;* que debe estar en la carpeta</span></div>
+  <div><span style="color: #008000;">&nbsp; &nbsp;* principal. */</span></div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #a31515;">"serviceWorker"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">in</span> <span
+     style="color: #001080;">navigator</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">registro</span> =</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #001080;">navigator</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+    style="color: #0070c1;">serviceWorker</span>.</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #795e26;">register</span>(<span
+     style="color: #001080;">sw</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+      style="color: #001080;">sw</span>, <span
+       style="color: #a31515;">"registrado."</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #0070c1;">registro</span>)</div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp; <span style="color: #795e26;">alert</span>(<span
+     style="color: #001080;">e</span>.<span
+     style="color: #001080;">message</span>)</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >G. js/config.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #af00db;">import</span> {</div>
+  <div>&nbsp;<span style="color: #001080;">regSw</span></div>
+  <div>} <span style="color: #af00db;">from</span> <span
+     style="color: #a31515;">"../lib/regSw.js"</span>;</div><br>
+  <div><span style="color: #795e26;">regSw</span>(<span
+     style="color: #a31515;">"sw.js"</span>)</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >H. index.html</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+     style="color: #ff0000;">html</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div><span style="color: #800000;">&lt;html</span> <span
+     style="color: #ff0000;">lang</span>=<span
+     style="color: #0000ff;">"es"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div><span style="color: #800000;">&lt;head&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+     style="color: #ff0000;">charset</span>=<span
+     style="color: #0000ff;">"UTF-8"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+     style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"viewport"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"width=device-width"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>PWA Básico<span
+     style="color: #800000;">&lt;/title&gt;</span></div><br>
+  <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; Resumen para los motores de</span></div>
+  <div><span style="color: #008000;">&nbsp; búsqueda.</span></div>
+  <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+     style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"description"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"Ejemplo de PWA"</span><span
+     style="color: #800000;">&gt;</span></div><br>
+  <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; Color de la barra de navegación</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; de Chrome en dispositivos</span></div>
+  <div><span style="color: #008000;">&nbsp; móviles.</span></div>
+  <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+     style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"theme-color"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"#cbc693"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; Ícono para la página web. Debe</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; ponerse en la raíz de la página.</span></div>
+  <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"icon"</span> <span
+     style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"32x32"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"favicon.ico"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; Configuración de la PWA para</span></div>
+  <div><span style="color: #008000;">&nbsp; Chrome y Edge.</span></div>
+  <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"manifest"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"site.webmanifest"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #008000;">&lt;!--</span></div>
+  <div><span
+    style="color: #008000;">&nbsp; Configuración para Web Clip en</span></div>
+  <div><span style="color: #008000;">&nbsp; Safari.</span></div>
+  <div><span style="color: #008000;">&nbsp;--&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-title"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"pwa"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-capable"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"yes"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;meta</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">name</span>=<span
+     style="color: #0000ff;">"apple-mobile-web-app-status-bar-style"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+     style="color: #0000ff;">"default"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"48x48"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_48.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"72x72"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_72.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"96x96"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_96.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"128x128"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_128.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"192x192"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_192.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"384x384"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_384.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"apple-touch-icon"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">sizes</span>=<span
+     style="color: #0000ff;">"512x512"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"img/maskable_icon_512.png"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;link</span> <span
+     style="color: #ff0000;">rel</span>=<span
+     style="color: #0000ff;">"stylesheet"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">href</span>=<span
+     style="color: #0000ff;">"css/estilos.css"</span><span
+     style="color: #800000;">&gt;</span></div>
+  <div><span style="color: #800000;">&lt;/head&gt;</span></div><br>
+  <div><span style="color: #800000;">&lt;body&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>PWA Básico<span
+     style="color: #800000;">&lt;/h1&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span>Hola mundo.<span
+     style="color: #800000;">&lt;/p&gt;</span></div>
+  <div>&nbsp;<span style="color: #800000;">&lt;script</span> <span
+     style="color: #ff0000;">type</span>=<span
+     style="color: #0000ff;">"module"</span></div>
+  <div>&nbsp; &nbsp;<span style="color: #ff0000;">src</span>=<span
+     style="color: #0000ff;">"js/config.js"</span><span
+     style="color: #800000;">&gt;&lt;/script&gt;</span></div>
+  <div><span style="color: #800000;">&lt;/body&gt;</span></div><br>
+  <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >I. css/estilos.css</h1><muestra-codigo>
+ <div>
+  <div><span
+     style="color: #800000;">html</span> {</div>
+  <div>&nbsp;<span
+     style="color: #ff0000;">font-family</span>: <span
+     style="color: #0451a5;">sans-serif</span>;</div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >J. favicon.ico</h1><figure>
+ <img alt="favicon.ico" src="/img/m05pwaBasica/favicon.ico">
+</figure>
+      </section>
+     <section >
+         <h1 >K. img/icono2048.png</h1><figure>
+ <img alt="icono2048.png" src="/img/m05pwaBasica/icono2048.png">
+</figure>
+      </section>
+     <section >
+         <h1 >L. img/maskable_icon_x48.png</h1><figure>
+ <img alt="maskable_icon_x48.png" src="/img/m05pwaBasica/maskable_icon_x48.png">
+</figure>
+      </section>
+     <section >
+         <h1 >M. img/maskable_icon_x72.png</h1><figure>
+ <img alt="maskable_icon_x72.png" src="/img/m05pwaBasica/maskable_icon_x72.png">
+</figure>
+      </section>
+     <section >
+         <h1 >N. img/maskable_icon_x96.png</h1><figure>
+ <img alt="maskable_icon_x96.png" src="/img/m05pwaBasica/maskable_icon_x96.png">
+</figure>
+      </section>
+     <section >
+         <h1 >O. img/maskable_icon_x128.png</h1><figure>
+ <img alt="maskable_icon_x128.png" src="/img/m05pwaBasica/maskable_icon_x128.png">
+</figure>
+      </section>
+     <section >
+         <h1 >P. img/maskable_icon_x192.png</h1><figure>
+ <img alt="maskable_icon_x192.png" src="/img/m05pwaBasica/maskable_icon_x192.png">
+</figure>
+      </section>
+     <section >
+         <h1 >Q. img/maskable_icon_x384.png</h1><figure>
+ <img alt="maskable_icon_x384.png" src="/img/m05pwaBasica/maskable_icon_x384.png">
+</figure>
+      </section>
+     <section >
+         <h1 >R. img/maskable_icon_x512.png</h1><figure>
+ <img alt="maskable_icon_x512.png" src="/img/m05pwaBasica/maskable_icon_x512.png">
+</figure>
+      </section>
+     <section >
+         <h1 >S. img/maskable_icon.png</h1><figure>
+ <img alt="maskable_icon.png" src="/img/m05pwaBasica/maskable_icon.png">
+</figure>
+      </section>
+     <section >
+         <h1 >T. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se presentó la estructura básica de una PWA.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+     <section >
+         <h1 >4. Composición</h1><div class="lectura">
+ <dl>
+  <dt>Microsoft Edge Chromium</dt>
+  <dd>
+   <p>
+    Ya viene instalado en las computadoras más nuevas, pero si la tuya
+    no lo tiene, lo puedes descargar de
+    <a href="https://www.microsoft.com/es-es/edge" rel="nooper"
+      target="_blank">https://www.microsoft.com/es-es/edge</a>.
+   </p>
+   <p class="noPrint">
+    <a href="https://drive.google.com/file/d/1Wwsq6D3MaX8CDPpCIu53p9Lvx_42D5ou/view?usp=sharing"
+      target="_blank" rel="nooper">Video de instalación.</a>
+   </p>
+  </dd>
+  <dt>Mozilla Firefox</dt>
+  <dd>
+   <p>
+    Lo puedes descargar de
+    <a href="https://www.mozilla.org"
+      target="_blank" rel="nooper">https://www.mozilla.org</a>.
+   </p>
+   <p class="noPrint">
+    <a href="https://drive.google.com/file/d/1Wr5AZUh1isg2qH0GtzQrz-MwjCfm2ZJC/view?usp=sharing"
+      target="_blank" rel="nooper">Video de Instalación.</a>
+   </p>
+  </dd>
+  <dt>Google Chrome</dt>
+  <dd>
+   <p>
+    Lo puedes descargar de
+    <a href="https://google.com/chrome"
+      target="_blank" rel="nooper">https://google.com/chrome</a>.
+   </p>
+   <p class="noPrint">
+    <a href="https://drive.google.com/file/d/1DvSCM9GSypdK1GEI7EpBnIp9olPG3zNE/view?usp=sharing"
+      target="_blank" rel="nooper">Video de Instalación.</a>
+   </p>
+  </dd>
+  <dt>Arduino IDE</dt>
+  <dt>Arduino core for ESP8266 WiFi chip</dt>
+  <dt>ArduinoWebSockets</dt>
+  <dd>
+   <p>
+    Puedes descargar Arduino IDE desde
+    <a href="https://www.arduino.cc/en/main/software" rel="nooper"
+      target="_blank">https://www.arduino.cc/en/main/software</a>.
+   </p>
+   <p>
+    Puedes descargar Arduino core for ESP8266 WiFi chip desde
+    <a href="https://github.com/esp8266/Arduino" rel="nooper"
+      target="_blank">https://github.com/esp8266/Arduino</a>.
+   </p>
+   <p class="noPrint">
+    <a href="https://drive.google.com/file/d/16zCByIKzt6OyCplIMbQg8EtVyButtKuO/view?usp=sharing"
+      target="_blank" rel="nooper">Video de Instalación de Arduino IDE + ESP8266
+     + ArduinoWebSockets.</a>
+   </p>
+  </dd>
+ </dl>
+</div>
+      </section>
+     <section>
+         <h1 class="leccion">5. Derechos de autor</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan los derechos de autor.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m05derechos/mAcasos.html">Diagrama de casos de uso</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mBdespliegue.html">Diagrama de despliegue</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mCer.html">Diagrama entidad relación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mDnoRel.html">Diseño no relacional</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mEinstrucciones.html">Instrucciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mFarchivos.html">Archivos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mGtipos.html">tipos.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mHcliente.html">cliente.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mIgetValor.html">getValor.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mJsetValor.html">setValor.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mKindexJs.html">index.js</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mLindexHtml.html">www/index.html</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05derechos/mMresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Diagrama de casos de uso</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Revisa el código y pruébalo en Replit conla URL
+    <a href="https://replit.com/@GilbertoPachec3/iot?v=1" rel="nooper"
+      target="_blank">https://replit.com/@GilbertoPachec3/iot?v=1</a>.
+   </p>
+  </li>
+ </ul>
+ <figure>
+  <img src="/img/m05iot/casos_iot.svg" alt="Diagrama de Casos de Uso">
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >B. Diagrama de despliegue</h1><div class="lectura">
+ <figure>
+  <img class="dc" src="/img/m05iot/despliegue_iot.svg"
+    alt="Diagrama de Despliegue">
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >C. Diagrama entidad relación</h1><div class="lectura">
+ <figure>
+  <img class="dc" src="/img/m05iot/entidades_iot.svg"
+    alt="Diagrama de Entidad Relación de la Base de Datos">
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >D. Diseño no relacional</h1><div class="lectura">
+ <figure>
+  <img class="dc" src="/img/m05iot/nosql_iot.svg"
+    alt="Diseño No SQL de la Base de Datos">
+ </figure>
+</div>
+      </section>
+     <section >
+         <h1 >E. Instrucciones</h1><div class="lectura">
+ <ol>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/10MfE6AYQHtSyfJW3Kb1PiARX1VNfkMwr/view?usp=sharing"
+      target="_blank" rel="nooper">Crea la base de datos iot en Atlas y agrega
+     un documento para el dispositivo.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    Crea un sitio de Replit de nombre iot con Node.js usando los
+    archivos de este proyecto. El proceso es parecido al de la lección
+    <em>Control de sesión</em>.
+   </p>
+  </li>
+ </ol>
+</div>
+      </section>
+     <section >
+         <h1 >F. Archivos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>www</p>
+   <ul>
+    <li>
+     <p><a href="mLindexHtml.html">index.html</a></p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p><a href="mHcliente.html">cliente.js</a></p>
+  </li>
+  <li>
+   <p><a href="mIgetValor.html">getValor.js</a></p>
+  </li>
+  <li>
+   <p><a href="mKindexJs.html">index.js</a></p>
+  </li>
+  <li>
+   <p><a href="mJsetValor.html">setValor.js</a></p>
+  </li>
+  <li>
+   <p><a href="mGtipos.html">tipos.js</a></p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >G. tipos.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@typedef</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Object}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">dispositivo</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">_id</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">valor</span><span
+     style="color: #008000;"> */</span></div><br>
+  <div><span style="color: #008000;">/**</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@typedef</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{Object}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">historico</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">[_id]</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">dispositivoId</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">valor</span></div>
+  <div><span style="color: #008000;">&nbsp;* </span><span
+     style="color: #0000ff;">@property</span><span
+     style="color: #008000;"> </span><span
+     style="color: #267f99;">{number}</span><span
+     style="color: #008000;"> </span><span
+     style="color: #001080;">timestamp</span></div>
+  <div><span style="color: #008000;">&nbsp;*/</span></div><br>
+  <div><span style="color: #267f99;">module</span>.<span
+     style="color: #267f99;">exports</span> = <span
+     style="color: #098658;">0</span>;</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >H. cliente.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">MongoClient</span> =</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"mongodb"</span>).<span
+     style="color: #001080;">MongoClient</span>;</div>
+  <div><span style="color: #008000;">/* Cambia el valor por el que te</span>
+  </div>
+  <div><span style="color: #008000;">&nbsp;* proporciona Atlas y cambia</span>
+  </div>
+  <div><span style="color: #008000;">&nbsp;* &lt;password&gt; por la
+    contraseña</span></div>
+  <div><span style="color: #008000;">&nbsp;* del usuario que creaste
+    dentro</span></div>
+  <div><span style="color: #008000;">&nbsp;* de Atlas. */</span></div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">uri</span> =</div>
+  <div>&nbsp;<span
+     style="color: #a31515;">"mongodb+srv://*****************"</span></div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">cliente</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #795e26;">MongoClient</span>(</div>
+  <div>&nbsp; <span style="color: #0070c1;">uri</span>,</div>
+  <div>&nbsp; {</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">useNewUrlParser</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #0000ff;">true</span>,</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #001080;">useUnifiedTopology</span><span
+     style="color: #001080;">:</span> <span style="color: #0000ff;">true</span>
+  </div>
+  <div>&nbsp; });</div>
+  <div>}</div><br>
+  <div><span style="color: #795e26;">module</span>.<span
+     style="color: #795e26;">exports</span> = <span
+     style="color: #795e26;">cliente</span>;</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >I. getValor.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #795e26;">cliente</span> =</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"./cliente"</span>)</div><br>
+  <div><span style="color: #0000ff;">async</span> <span
+     style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">getValor</span>() {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">client</span> = <span
+     style="color: #795e26;">cliente</span>()</div>
+  <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">connect</span>()</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">iot</span> = <span
+     style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">db</span>(<span
+     style="color: #a31515;">"iot"</span>)</div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">dispositivo</span> =</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">iot</span>.<span
+     style="color: #795e26;">collection</span>(<span
+     style="color: #a31515;">"dispositivo"</span>)</div>
+  <div>&nbsp; <span
+     style="color: #008000;">/** @type {import("./tipos").</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; &nbsp;* &nbsp; &nbsp; &nbsp; dispositivo|null} */</span></div>
+  <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">modelo</span> = <span
+     style="color: #af00db;">await</span> <span
+     style="color: #0070c1;">dispositivo</span>.</div>
+  <div>&nbsp; &nbsp;<span style="color: #795e26;">findOne</span>({ <span
+     style="color: #001080;">_id</span><span
+     style="color: #001080;">:</span> <span
+     style="color: #a31515;">"1"</span> })</div>
+  <div>&nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Recibe"</span>, <span
+     style="color: #a31515;">"bd"</span>,</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">modelo</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">if</span> (<span
+     style="color: #0070c1;">modelo</span> !== <span
+     style="color: #0000ff;">null</span>) {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #0070c1;">modelo</span>.<span
+     style="color: #001080;">valor</span></div>
+  <div>&nbsp; } <span style="color: #af00db;">else</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"0"</span></div>
+  <div>&nbsp; }</div>
+  <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp;} <span style="color: #af00db;">finally</span> {</div>
+  <div>&nbsp; <span style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">close</span>()</div>
+  <div>&nbsp;}</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #a31515;">"0"</span></div>
+  <div>}</div><br>
+  <div><span style="color: #795e26;">module</span>.<span
+     style="color: #795e26;">exports</span> = <span
+     style="color: #795e26;">getValor</span></div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >J. setValor.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #795e26;">cliente</span>&nbsp;=</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"./cliente"</span>)</div><br>
+  <div><span style="color: #008000;">/**&nbsp;</span><span
+     style="color: #0000ff;">@param</span><span
+     style="color: #008000;">&nbsp;</span><span
+     style="color: #267f99;">{string}</span><span
+     style="color: #008000;">&nbsp;</span><span
+     style="color: #001080;">valor</span><span
+     style="color: #008000;">&nbsp;*/</span></div>
+  <div><span style="color: #0000ff;">async</span>&nbsp;<span
+     style="color: #0000ff;">function</span>&nbsp;<span
+     style="color: #795e26;">setValor</span>(<span
+     style="color: #001080;">valor</span>)&nbsp;{</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #0070c1;">client</span>&nbsp;=&nbsp;<span
+     style="color: #795e26;">cliente</span>()</div>
+  <div>&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+     style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">connect</span>()</div>
+  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #0070c1;">iot</span>&nbsp;=&nbsp;<span
+     style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">db</span>(<span
+     style="color: #a31515;">"iot"</span>)</div>
+  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #0070c1;">dispositivo</span>&nbsp;=</div>
+  <div>&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">iot</span>.<span
+     style="color: #795e26;">collection</span>(<span
+     style="color: #a31515;">"dispositivo"</span>)</div>
+  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #0070c1;">historico</span>&nbsp;=</div>
+  <div>&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">iot</span>.<span
+     style="color: #795e26;">collection</span>(<span
+     style="color: #a31515;">"historico"</span>)</div>
+  <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Envía"</span>,&nbsp;<span
+     style="color: #a31515;">"bd"</span>,&nbsp;<span
+     style="color: #001080;">valor</span>)</div>
+  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+     style="color: #0070c1;">dispositivo</span>.<span
+     style="color: #795e26;">updateOne</span>(</div>
+  <div>&nbsp;&nbsp;&nbsp;{&nbsp;<span style="color: #001080;">_id</span><span
+     style="color: #001080;">:</span>&nbsp;<span
+     style="color: #a31515;">"1"</span>&nbsp;},</div>
+  <div>&nbsp;&nbsp;&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">$set</span><span
+     style="color: #001080;">:</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">valor</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;&nbsp;})</div>
+  <div>&nbsp;&nbsp;<span
+     style="color: #008000;">/**&nbsp;@type&nbsp;{import("./tipos").</span>
+  </div>
+  <div><span
+     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;historico}&nbsp;*/</span>
+  </div>
+  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
+     style="color: #0070c1;">modelo</span>&nbsp;=&nbsp;{</div>
+  <div>&nbsp;&nbsp;&nbsp;<span
+     style="color: #001080;">dispositivoId</span><span
+     style="color: #001080;">:</span>&nbsp;<span
+     style="color: #a31515;">"1"</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">valor</span>,</div>
+  <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">timestamp</span><span
+     style="color: #001080;">:</span>&nbsp;<span
+     style="color: #267f99;">Date</span>.<span
+     style="color: #795e26;">now</span>()</div>
+  <div>&nbsp;&nbsp;}</div>
+  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
+     style="color: #0070c1;">historico</span>.<span
+     style="color: #795e26;">insertOne</span>(<span
+     style="color: #0070c1;">modelo</span>)</div>
+  <div>&nbsp;}&nbsp;<span style="color: #af00db;">catch</span>&nbsp;(<span
+     style="color: #001080;">e</span>)&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>&nbsp;}&nbsp;<span style="color: #af00db;">finally</span>&nbsp;{</div>
+  <div>&nbsp;&nbsp;<span style="color: #0070c1;">client</span>.<span
+     style="color: #795e26;">close</span>()</div>
+  <div>&nbsp;}</div>
+  <div>}</div><br>
+  <div><span style="color: #795e26;">module</span>.<span
+     style="color: #795e26;">exports</span>&nbsp;=&nbsp;<span
+     style="color: #795e26;">setValor</span></div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >K. index.js</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #795e26;">express</span> = <span
+     style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"express"</span>)</div>
+  <div><span style="color: #0000ff;">const</span> { <span
+     style="color: #267f99;">Server</span> } = <span
+     style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">'http'</span>)</div>
+  <div><span style="color: #0000ff;">const</span> { <span
+     style="color: #795e26;">join</span> } = <span
+     style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"path"</span>)</div>
+  <div><span style="color: #0000ff;">const</span> { <span
+     style="color: #267f99;">server</span> } =</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">'websocket'</span>)</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #795e26;">setValor</span> =</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"./setValor"</span>)</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #795e26;">getValor</span> =</div>
+  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
+     style="color: #a31515;">"./getValor"</span>)</div><br>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">app</span> = <span
+     style="color: #795e26;">express</span>()</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">httpServer</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Server</span>(<span
+     style="color: #0070c1;">app</span>)</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">www</span> = <span
+     style="color: #795e26;">join</span>(<span
+     style="color: #001080;">__dirname</span>, <span
+     style="color: #a31515;">"www"</span>)</div><br>
+  <div><span style="color: #0070c1;">app</span>.<span
+     style="color: #795e26;">use</span>(<span
+     style="color: #795e26;">express</span>.<span
+     style="color: #795e26;">static</span>(<span
+     style="color: #0070c1;">www</span>))</div>
+  <div><span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">wsServer</span> =</div>
+  <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">server</span>({ <span
+     style="color: #001080;">httpServer</span> })</div><br>
+  <div><span style="color: #795e26;">getValor</span>().</div>
+  <div>&nbsp;<span style="color: #795e26;">then</span>(<span
+     style="color: #001080;">valor</span> <span
+     style="color: #0000ff;">=&gt;</span> {</div>
+  <div>&nbsp; <span
+     style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">cons</span> = <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Set</span>()</div>
+  <div>&nbsp; <span style="color: #0070c1;">wsServer</span>.<span
+     style="color: #795e26;">on</span>(<span
+     style="color: #a31515;">'request'</span>, <span
+     style="color: #001080;">req</span> <span
+     style="color: #0000ff;">=&gt;</span> {</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">con</span> = <span
+     style="color: #001080;">req</span>.</div>
+  <div>&nbsp; &nbsp; <span style="color: #795e26;">accept</span>(<span
+     style="color: #0000ff;">undefined</span>, <span
+     style="color: #001080;">req</span>.<span
+     style="color: #001080;">origin</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">cons</span>.<span
+     style="color: #795e26;">add</span>(<span
+     style="color: #0070c1;">con</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Conexión."</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Envía cliente"</span>,</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span>)</div>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
+     style="color: #795e26;">sendUTF</span>(<span
+     style="color: #001080;">valor</span>)</div><br>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
+     style="color: #795e26;">on</span>(<span
+     style="color: #a31515;">"message"</span>, <span
+     style="color: #0000ff;">async</span> <span
+     style="color: #001080;">men</span> <span
+     style="color: #0000ff;">=&gt;</span> {</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Recibe"</span>,</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #008000;">// @ts-ignore</span></div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"cliente"</span>, <span
+     style="color: #001080;">men</span>.<span
+     style="color: #001080;">utf8Data</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span> =</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #001080;">valor</span> === <span
+     style="color: #a31515;">"0"</span> ? <span
+     style="color: #a31515;">"1"</span> : <span
+     style="color: #a31515;">"0"</span></div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
+     style="color: #795e26;">setValor</span>(<span
+     style="color: #001080;">valor</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Envía"</span>,</div>
+  <div>&nbsp; &nbsp; &nbsp;<span
+     style="color: #a31515;">"clientes"</span>, <span
+     style="color: #001080;">valor</span>)</div>
+  <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
+     style="color: #0000ff;">let</span> <span
+     style="color: #001080;">item</span> <span
+     style="color: #0000ff;">of</span> <span
+     style="color: #0070c1;">cons</span>.<span
+     style="color: #795e26;">keys</span>()) {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">item</span>.<span
+     style="color: #795e26;">sendUTF</span>(<span
+     style="color: #001080;">valor</span>)</div>
+  <div>&nbsp; &nbsp; }</div>
+  <div>&nbsp; &nbsp;})</div><br>
+  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
+     style="color: #795e26;">on</span>(<span
+     style="color: #a31515;">"close"</span>,</div>
+  <div>&nbsp; &nbsp; (<span style="color: #001080;">razon</span>, <span
+     style="color: #001080;">descripcion</span>) <span
+     style="color: #0000ff;">=&gt;</span> {</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">cons</span>.<span
+     style="color: #795e26;">delete</span>(<span
+     style="color: #0070c1;">con</span>)</div>
+  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #a31515;">"Desconexión"</span>,</div>
+  <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">razon</span>, <span
+     style="color: #001080;">descripcion</span>)</div>
+  <div>&nbsp; &nbsp; })</div>
+  <div>&nbsp; })</div>
+  <div>&nbsp; <span style="color: #0070c1;">httpServer</span>.<span
+     style="color: #795e26;">listen</span>(<span
+     style="color: #098658;">3000</span>,</div>
+  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; &nbsp; <span style="color: #a31515;">"Escuchando puerto
+    3000."</span>))</div>
+  <div>&nbsp;}).</div>
+  <div>&nbsp;<span style="color: #795e26;">catch</span>(<span
+     style="color: #001080;">e</span> <span
+     style="color: #0000ff;">=&gt;</span> <span
+     style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(<span
+     style="color: #001080;">e</span>))</div>
+ </div>
+</muestra-codigo>
+      </section>
+     <section >
+         <h1 >L. www/index.html</h1><muestra-codigo>
+ <div>
+ <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
+    style="color: #ff0000;">html</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div><span style="color: #800000;">&lt;html</span> <span
+    style="color: #ff0000;">lang</span>=<span
+    style="color: #0000ff;">"es"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div><span style="color: #800000;">&lt;head&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+    style="color: #ff0000;">charset</span>=<span
+    style="color: #0000ff;">"utf-8"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
+    style="color: #ff0000;">name</span>=<span
+    style="color: #0000ff;">"viewport"</span></div>
+ <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
+    style="color: #0000ff;">"width=device-width"</span><span
+    style="color: #800000;">&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>IoT<span
+    style="color: #800000;">&lt;/title&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/head&gt;</span></div>
+ <div><span style="color: #800000;">&lt;body&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>IoT<span
+    style="color: #800000;">&lt;/h1&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+ <div>&nbsp; <span style="color: #800000;">&lt;output</span> <span
+    style="color: #ff0000;">id</span>=<span
+    style="color: #0000ff;">"salida"</span><span
+    style="color: #800000;">&gt;&lt;/output&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
+ <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
+    style="color: #ff0000;">type</span>=<span
+    style="color: #0000ff;">"button"</span></div>
+ <div>&nbsp; &nbsp; <span style="color: #ff0000;">onclick</span>=<span
+    style="color: #0000ff;">"</span><span
+    style="color: #795e26;">envia</span><span
+    style="color: #0000ff;">()</span><span
+    style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
+ </div>
+ <div>&nbsp; &nbsp;Enviar</div>
+ <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
+ <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
+ <div>&nbsp; <span style="color: #0000ff;">let</span> <span
+    style="color: #001080;">valor</span> = <span
+    style="color: #a31515;">""</span></div>
+ <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+    style="color: #0070c1;">ws</span> = <span
+    style="color: #0000ff;">new</span> <span
+    style="color: #267f99;">WebSocket</span>(</div>
+ <div>&nbsp; &nbsp;<span
+    style="color: #a31515;">"wss://iot.gilbertopachec3.repl.co"</span>)</div>
+ <div>&nbsp; <span style="color: #0070c1;">ws</span>.<span
+    style="color: #001080;">onopen</span> =</div>
+ <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+    style="color: #001080;">console</span>.<span
+    style="color: #795e26;">log</span>(<span
+    style="color: #a31515;">'Conectado'</span>)</div>
+ <div>&nbsp; <span style="color: #0070c1;">ws</span>.<span
+    style="color: #001080;">onmessage</span> = <span
+    style="color: #001080;">evt</span> <span
+    style="color: #0000ff;">=&gt;</span> {</div>
+ <div>&nbsp; &nbsp;<span style="color: #001080;">valor</span> = <span
+    style="color: #001080;">evt</span>.<span
+    style="color: #001080;">data</span></div>
+ <div>&nbsp; &nbsp;<span style="color: #001080;">salida</span>.<span
+    style="color: #001080;">value</span> =</div>
+ <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span> === <span
+    style="color: #a31515;">"1"</span> ? <span
+    style="color: #a31515;">"🔴"</span> : <span
+    style="color: #a31515;">"⚪"</span></div>
+ <div>&nbsp; }</div>
+ <div>&nbsp; </div>
+ <div>&nbsp; <span style="color: #0000ff;">function</span> <span
+    style="color: #795e26;">envia</span>() {</div>
+ <div>&nbsp; &nbsp;<span style="color: #0070c1;">ws</span>.<span
+    style="color: #795e26;">send</span>(<span
+    style="color: #001080;">valor</span>)</div>
+ <div>&nbsp; }</div>
+ <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/body&gt;</span></div>
+ <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+</div>
+ </muestra-codigo>
+      </section>
+     <section >
+         <h1 >M. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se presento el proyecto base para IoT.</p>
+  </li>
+ </ul>
+</div>
+      </section>
+      </section>
+</body>
+</html>
