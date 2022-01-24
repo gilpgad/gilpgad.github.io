@@ -25,6 +25,8 @@ const ARCHIVOS = [
    "/img/m02elementos/formas.png",
    "/img/m02elementos/iloveyou.jpg",
    "/img/m02elementos/Imagen.jpg",
+   "/img/m02elementos/pexels-erik-mclean-4365459.jpg",
+   "/img/m02elementos/pexels-valeriia-miller-2530912.jpg",
    "/index.html",
    "/js/muestra-codigo.js",
    "/m01conceptos/index.html",
