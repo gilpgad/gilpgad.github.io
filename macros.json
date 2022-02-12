@@ -1,4 +1,5 @@
 {
  "app": "GilPG AD",
- "version": "1.0"
+ "version": "1.0",
+ "image": "https://gilpgad.github.io/img/icono/icono2048.png"
 }
