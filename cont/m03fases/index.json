@@ -5,104 +5,104 @@
  "printDescription": "Página para imprimir de la lección «3. Fases del proceso de diseño».",
  "listado": [
   {
-   "name": "mAinstrucciones.html",
-   "title": "Instrucciones",
-   "description": "Instrucciones para crear, ejecutar y probar el ejemplo de Fases del proceso de diseño."
+   "name": "mAfases.html",
+   "title": "Fases del proceso de diseño gráfico - creativo",
+   "description": "Fases del proceso de diseño gráfico - creativo."
   },
   {
-   "name": "mBarchivos.html",
-   "title": "Archivos",
-   "description": "Archivos que forman el ejemplo de Fases del proceso de diseño."
+   "name": "mBanalitica.html",
+   "title": "Fase analítica",
+   "description": "Sección «Fase analítica»."
   },
   {
-   "name": "mCjsconfigJson.html",
-   "title": "jsconfig.json",
-   "description": "Código del archivo «jsconfig.json» del ejemplo de Fases del proceso de diseño."
+   "name": "mCdefinicion.html",
+   "title": "Definición del problema o necesidad a resolver",
+   "description": "Definición del problema o necesidad a resolver."
   },
   {
-   "name": "mDsiteWebmanifest.html",
-   "title": "site.webmanifest",
-   "description": "Código del archivo «site.webmanifest» del ejemplo de Fases del proceso de diseño."
+   "name": "mDplan.html",
+   "title": "Plan de acción detallado",
+   "description": "Plan de acción detallado."
   },
   {
-   "name": "mEswJs.html",
-   "title": "sw.js",
-   "description": "Código del archivo «sw.js» del ejemplo de Fases del proceso de diseño."
+   "name": "mElistado.html",
+   "title": "Listado de requerimientos",
+   "description": "Listado de requerimientos."
   },
   {
-   "name": "mFregSwJs.html",
-   "title": "lib/regSw.js",
-   "description": "Código del archivo «lib/regSw.js» del ejemplo de Fases del proceso de diseño."
+   "name": "mFcreativa.html",
+   "title": "Fase creativa",
+   "description": "Sección «Fase creativa»."
   },
   {
-   "name": "mGconfigJs.html",
-   "title": "js/config.js",
-   "description": "Código del archivo «js/config.js» del ejemplo de Fases del proceso de diseño."
+   "name": "mGanalisis.html",
+   "title": "Análisis y síntesis de datos",
+   "description": "Análisis y síntesis de datos."
   },
   {
-   "name": "mHindexHtml.html",
-   "title": "index.html",
-   "description": "Código del archivo «index.html» del ejemplo de Fases del proceso de diseño."
+   "name": "mHbocetaje.html",
+   "title": "Bocetaje inicial o preliminar",
+   "description": "Bocetaje inicial o preliminar."
   },
   {
-   "name": "mIestilosCss.html",
-   "title": "css/estilos.css",
-   "description": "Código del archivo «css/estilos.css» del ejemplo de Fases del proceso de diseño."
+   "name": "mIpreseleccion.html",
+   "title": "Preselección de ideas",
+   "description": "Preselección de ideas."
   },
   {
-   "name": "mJfaviconIco.html",
-   "title": "favicon.ico",
-   "description": "Código del archivo «favicon.ico» del ejemplo de Fases del proceso de diseño."
+   "name": "mIevolucion.html",
+   "title": "Evolución de bocetos",
+   "description": "Evolución de bocetos."
   },
   {
-   "name": "mKicono2048png.html",
-   "title": "img/icono2048.png",
-   "description": "Código del archivo «img/icono2048.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mJpresentacion.html",
+   "title": "Elaboración de la presentación",
+   "description": "Elaboración de la presentación."
   },
   {
-   "name": "mLmaskable_icon_x48png.html",
-   "title": "img/maskable_icon_x48.png",
-   "description": "Código del archivo «img/maskable_icon_x48.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mKseleccion.html",
+   "title": "Selección de alternativas",
+   "description": "Selección de alternativas."
   },
   {
-   "name": "mMmaskable_icon_x72png.html",
-   "title": "img/maskable_icon_x72.png",
-   "description": "Código del archivo «img/maskable_icon_x72.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mLrefinado.html",
+   "title": "Refinado",
+   "description": "Refinado."
   },
   {
-   "name": "mNmaskable_icon_x96png.html",
-   "title": "img/maskable_icon_x96.png",
-   "description": "Código del archivo «img/maskable_icon_x96.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mMdesarrollo.html",
+   "title": "Fase de desarrollo",
+   "description": "Sección «Fase de desarrollo»."
   },
   {
-   "name": "mOmaskable_icon_x128png.html",
-   "title": "img/maskable_icon_x128.png",
-   "description": "Código del archivo «img/maskable_icon_x128.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mNvalidacion.html",
+   "title": "Validación del diseño",
+   "description": "Validación del diseño."
   },
   {
-   "name": "mPmaskable_icon_x192png.html",
-   "title": "img/maskable_icon_x192.png",
-   "description": "Código del archivo «img/maskable_icon_x192.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mOrefinadoPru.html",
+   "title": "Refinado en base a pruebas",
+   "description": "Refinado en base a pruebas."
   },
   {
-   "name": "mQmaskable_icon_x384png.html",
-   "title": "img/maskable_icon_x384.png",
-   "description": "Código del archivo «img/maskable_icon_x384.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mPaprobacion.html",
+   "title": "Aprobación del diseño final",
+   "description": "Aprobación del diseño final."
   },
   {
-   "name": "mRmaskable_icon_x512png.html",
-   "title": "img/maskable_icon_x512.png",
-   "description": "Código del archivo «img/maskable_icon_x512.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mQadaptacion.html",
+   "title": "Adaptación a diversas presentaciones",
+   "description": "Adaptación a diversas presentaciones."
   },
   {
-   "name": "mSmaskable_iconPng.html",
-   "title": "img/maskable_icon.png",
-   "description": "Código del archivo «img/maskable_icon.png» del ejemplo de Fases del proceso de diseño."
+   "name": "mRpreparar.html",
+   "title": "Preparar documentos para producción",
+   "description": "Preparar documentos para producción."
   },
   {
-   "name": "mTresumen.html",
-   "title": "Resumen",
-   "description": "Resumen de la lección «3. Fases del proceso de diseño»."
+   "name": "mSsolucion.html",
+   "title": "Se obtiene la solución final",
+   "description": "Se obtiene la solución final."
   }
  ]
 }
