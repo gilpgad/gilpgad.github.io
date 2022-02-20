@@ -40,8 +40,10 @@ const ARCHIVOS = [
    "/img/m03fases/presentacion3.svg",
    "/img/m03fases/produccion.svg",
    "/img/m03fases/producto.svg",
+   "/",
    "/index.html",
    "/js/muestra-codigo.js",
+   "/m01conceptos/",
    "/m01conceptos/index.html",
    "/m01conceptos/mAintroDisGraf.html",
    "/m01conceptos/mBdisGraf.html",
@@ -52,6 +54,7 @@ const ARCHIVOS = [
    "/m01conceptos/mGfunCreat.html",
    "/m01conceptos/mHapsCreat.html",
    "/m01conceptos/print.html",
+   "/m02elementos/",
    "/m02elementos/index.html",
    "/m02elementos/mAtexto.html",
    "/m02elementos/mBformas.html",
@@ -67,6 +70,7 @@ const ARCHIVOS = [
    "/m02elementos/mLcontinuidad.html",
    "/m02elementos/mMpsiColor.html",
    "/m02elementos/print.html",
+   "/m03fases/",
    "/m03fases/index.html",
    "/m03fases/mAfases.html",
    "/m03fases/mBanalitica.html",
@@ -90,6 +94,7 @@ const ARCHIVOS = [
    "/m03fases/mSsolucion.html",
    "/m03fases/print.html",
    "/m04composicion.html",
+   "/m05derechos/",
    "/m05derechos/index.html",
    "/m05derechos/mAcasos.html",
    "/m05derechos/mBdespliegue.html",
@@ -106,8 +111,7 @@ const ARCHIVOS = [
    "/m05derechos/mMresumen.html",
    "/m05derechos/print.html",
    "/print.html",
-   "/site.webmanifest",
-    "/"]
+   "/site.webmanifest" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)
