@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>L. www/index.html - GilPG AD</title>
- <meta name="description" content="Contenido del archivo «www/index.html».">
+ <title>C. Establecer derechos - GilPG AD</title>
+ <meta name="description" content="Establecer derechos.">
  <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,96 +397,35 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m05derechos/mKindexJs.html" title="K. index.js">◀</a>
-  <a class="siguiente" href="/m05derechos/mMresumen.html" title="M. Resumen">▶</a>
+  <a class="anterior" href="/m05derechos/mBindautor.html" title="B. INDAUTOR">◀</a>
+  <a class="siguiente" href="/m05derechos/mDcreative.html" title="D. Creative Commons">▶</a>
  </div>
-   <h1 >L. www/index.html</h1><muestra-codigo>
- <div>
- <div><span style="color: #800000;">&lt;!DOCTYPE</span> <span
-    style="color: #ff0000;">html</span><span
-    style="color: #800000;">&gt;</span></div>
- <div><span style="color: #800000;">&lt;html</span> <span
-    style="color: #ff0000;">lang</span>=<span
-    style="color: #0000ff;">"es"</span><span
-    style="color: #800000;">&gt;</span></div>
- <div><span style="color: #800000;">&lt;head&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-    style="color: #ff0000;">charset</span>=<span
-    style="color: #0000ff;">"utf-8"</span><span
-    style="color: #800000;">&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;meta</span> <span
-    style="color: #ff0000;">name</span>=<span
-    style="color: #0000ff;">"viewport"</span></div>
- <div>&nbsp; &nbsp;<span style="color: #ff0000;">content</span>=<span
-    style="color: #0000ff;">"width=device-width"</span><span
-    style="color: #800000;">&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;title&gt;</span>IoT<span
-    style="color: #800000;">&lt;/title&gt;</span></div>
- <div><span style="color: #800000;">&lt;/head&gt;</span></div>
- <div><span style="color: #800000;">&lt;body&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;h1&gt;</span>IoT<span
-    style="color: #800000;">&lt;/h1&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
- <div>&nbsp; <span style="color: #800000;">&lt;output</span> <span
-    style="color: #ff0000;">id</span>=<span
-    style="color: #0000ff;">"salida"</span><span
-    style="color: #800000;">&gt;&lt;/output&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;p&gt;</span></div>
- <div>&nbsp; <span style="color: #800000;">&lt;button</span> <span
-    style="color: #ff0000;">type</span>=<span
-    style="color: #0000ff;">"button"</span></div>
- <div>&nbsp; &nbsp; <span style="color: #ff0000;">onclick</span>=<span
-    style="color: #0000ff;">"</span><span
-    style="color: #795e26;">envia</span><span
-    style="color: #0000ff;">()</span><span
-    style="color: #0000ff;">"</span><span style="color: #800000;">&gt;</span>
- </div>
- <div>&nbsp; &nbsp;Enviar</div>
- <div>&nbsp; <span style="color: #800000;">&lt;/button&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;/p&gt;</span></div>
- <div>&nbsp;<span style="color: #800000;">&lt;script&gt;</span></div>
- <div>&nbsp; <span style="color: #0000ff;">let</span> <span
-    style="color: #001080;">valor</span> = <span
-    style="color: #a31515;">""</span></div>
- <div>&nbsp; <span style="color: #0000ff;">const</span> <span
-    style="color: #0070c1;">ws</span> = <span
-    style="color: #0000ff;">new</span> <span
-    style="color: #267f99;">WebSocket</span>(</div>
- <div>&nbsp; &nbsp;<span
-    style="color: #a31515;">"wss://iot.gilbertopachec3.repl.co"</span>)</div>
- <div>&nbsp; <span style="color: #0070c1;">ws</span>.<span
-    style="color: #001080;">onopen</span> =</div>
- <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
-    style="color: #001080;">console</span>.<span
-    style="color: #795e26;">log</span>(<span
-    style="color: #a31515;">'Conectado'</span>)</div>
- <div>&nbsp; <span style="color: #0070c1;">ws</span>.<span
-    style="color: #001080;">onmessage</span> = <span
-    style="color: #001080;">evt</span> <span
-    style="color: #0000ff;">=&gt;</span> {</div>
- <div>&nbsp; &nbsp;<span style="color: #001080;">valor</span> = <span
-    style="color: #001080;">evt</span>.<span
-    style="color: #001080;">data</span></div>
- <div>&nbsp; &nbsp;<span style="color: #001080;">salida</span>.<span
-    style="color: #001080;">value</span> =</div>
- <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span> === <span
-    style="color: #a31515;">"1"</span> ? <span
-    style="color: #a31515;">"🔴"</span> : <span
-    style="color: #a31515;">"⚪"</span></div>
- <div>&nbsp; }</div>
- <div>&nbsp; </div>
- <div>&nbsp; <span style="color: #0000ff;">function</span> <span
-    style="color: #795e26;">envia</span>() {</div>
- <div>&nbsp; &nbsp;<span style="color: #0070c1;">ws</span>.<span
-    style="color: #795e26;">send</span>(<span
-    style="color: #001080;">valor</span>)</div>
- <div>&nbsp; }</div>
- <div>&nbsp;<span style="color: #800000;">&lt;/script&gt;</span></div>
- <div><span style="color: #800000;">&lt;/body&gt;</span></div>
- <div><span style="color: #800000;">&lt;/html&gt;</span></div>
+   <h1 >C. Establecer derechos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    La forma más fácil de establecer derechos en una obra es añadir una leyenda
+    que diga
+   </p>
+  </li>
+  <li>
+   <p>© Año Autor. Todos los derechos reservados.</p>
+  </li>
+  <li>
+   <p>
+    Ejemplo: © 2022 Gilberto Pacheco Gallegos. Todos los derechos reservados.
+   </p>
+  </li>
+  <li>
+   <p>
+    Quien use la obra, necesita una autorización escrita (también llamada
+    licencia) directa del autor, donde se indique a quién se autoriza el uso y
+    con qué derechos (por ejemplo, usar el documento, distribuirlo o hacer
+    cambios).
+   </p>
+  </li>
+ </ul>
 </div>
- </muestra-codigo>
  <footer>
  <p>
   <a rel="license"
@@ -524,67 +463,27 @@
    <ol type="A">
     <li>
      <p>
-      <a href="/m05derechos/mAcasos.html">Diagrama de casos de uso</a>
+      <a href="/m05derechos/mAderechos.html">Derechos de autor</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mBdespliegue.html">Diagrama de despliegue</a>
+      <a href="/m05derechos/mBindautor.html">INDAUTOR</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mCer.html">Diagrama entidad relación</a>
+      <a href="/m05derechos/mCestablecer.html" class="actual">Establecer derechos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mDnoRel.html">Diseño no relacional</a>
+      <a href="/m05derechos/mDcreative.html">Creative Commons</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mEinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mFarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mGtipos.html">tipos.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mHcliente.html">cliente.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mIgetValor.html">getValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mJsetValor.html">setValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mKindexJs.html">index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mLindexHtml.html" class="actual">www/index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mMresumen.html">Resumen</a>
+      <a href="/m05derechos/mElicenciasC.html">Licencias Creative Commons</a>
      </p>
     </li>
    </ol>
@@ -598,9 +497,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05derechos/mKindexJs.html"
+ let urlAnterior = "/m05derechos/mBindautor.html"
  /**@type {string} */
- let urlSiguiente = "/m05derechos/mMresumen.html"
+ let urlSiguiente = "/m05derechos/mDcreative.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

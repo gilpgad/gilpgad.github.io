@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>K. index.js - GilPG AD</title>
- <meta name="description" content="Contenido del archivo «index.js».">
+ <title>E. Licencias Creative Commons - GilPG AD</title>
+ <meta name="description" content="Licencias Creative Commons.">
  <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,165 +397,13 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m05derechos/mJsetValor.html" title="J. setValor.js">◀</a>
-  <a class="siguiente" href="/m05derechos/mLindexHtml.html" title="L. www/index.html">▶</a>
+  <a class="anterior" href="/m05derechos/mDcreative.html" title="D. Creative Commons">◀</a>
+  
  </div>
-   <h1 >K. index.js</h1><muestra-codigo>
- <div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #795e26;">express</span> = <span
-     style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">"express"</span>)</div>
-  <div><span style="color: #0000ff;">const</span> { <span
-     style="color: #267f99;">Server</span> } = <span
-     style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">'http'</span>)</div>
-  <div><span style="color: #0000ff;">const</span> { <span
-     style="color: #795e26;">join</span> } = <span
-     style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">"path"</span>)</div>
-  <div><span style="color: #0000ff;">const</span> { <span
-     style="color: #267f99;">server</span> } =</div>
-  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">'websocket'</span>)</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #795e26;">setValor</span> =</div>
-  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">"./setValor"</span>)</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #795e26;">getValor</span> =</div>
-  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">"./getValor"</span>)</div><br>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">app</span> = <span
-     style="color: #795e26;">express</span>()</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">httpServer</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Server</span>(<span
-     style="color: #0070c1;">app</span>)</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">www</span> = <span
-     style="color: #795e26;">join</span>(<span
-     style="color: #001080;">__dirname</span>, <span
-     style="color: #a31515;">"www"</span>)</div><br>
-  <div><span style="color: #0070c1;">app</span>.<span
-     style="color: #795e26;">use</span>(<span
-     style="color: #795e26;">express</span>.<span
-     style="color: #795e26;">static</span>(<span
-     style="color: #0070c1;">www</span>))</div>
-  <div><span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">wsServer</span> =</div>
-  <div>&nbsp;<span style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">server</span>({ <span
-     style="color: #001080;">httpServer</span> })</div><br>
-  <div><span style="color: #795e26;">getValor</span>().</div>
-  <div>&nbsp;<span style="color: #795e26;">then</span>(<span
-     style="color: #001080;">valor</span> <span
-     style="color: #0000ff;">=&gt;</span> {</div>
-  <div>&nbsp; <span
-     style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">cons</span> = <span
-     style="color: #0000ff;">new</span> <span
-     style="color: #267f99;">Set</span>()</div>
-  <div>&nbsp; <span style="color: #0070c1;">wsServer</span>.<span
-     style="color: #795e26;">on</span>(<span
-     style="color: #a31515;">'request'</span>, <span
-     style="color: #001080;">req</span> <span
-     style="color: #0000ff;">=&gt;</span> {</div>
-  <div>&nbsp; &nbsp;<span style="color: #0000ff;">const</span> <span
-     style="color: #0070c1;">con</span> = <span
-     style="color: #001080;">req</span>.</div>
-  <div>&nbsp; &nbsp; <span style="color: #795e26;">accept</span>(<span
-     style="color: #0000ff;">undefined</span>, <span
-     style="color: #001080;">req</span>.<span
-     style="color: #001080;">origin</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">cons</span>.<span
-     style="color: #795e26;">add</span>(<span
-     style="color: #0070c1;">con</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Conexión."</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Envía cliente"</span>,</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span>)</div>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
-     style="color: #795e26;">sendUTF</span>(<span
-     style="color: #001080;">valor</span>)</div><br>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
-     style="color: #795e26;">on</span>(<span
-     style="color: #a31515;">"message"</span>, <span
-     style="color: #0000ff;">async</span> <span
-     style="color: #001080;">men</span> <span
-     style="color: #0000ff;">=&gt;</span> {</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Recibe"</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #008000;">// @ts-ignore</span></div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #a31515;">"cliente"</span>, <span
-     style="color: #001080;">men</span>.<span
-     style="color: #001080;">utf8Data</span>)</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">valor</span> =</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #001080;">valor</span> === <span
-     style="color: #a31515;">"0"</span> ? <span
-     style="color: #a31515;">"1"</span> : <span
-     style="color: #a31515;">"0"</span></div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">await</span> <span
-     style="color: #795e26;">setValor</span>(<span
-     style="color: #001080;">valor</span>)</div>
-  <div>&nbsp; &nbsp; <span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Envía"</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp;<span
-     style="color: #a31515;">"clientes"</span>, <span
-     style="color: #001080;">valor</span>)</div>
-  <div>&nbsp; &nbsp; <span style="color: #af00db;">for</span> (<span
-     style="color: #0000ff;">let</span> <span
-     style="color: #001080;">item</span> <span
-     style="color: #0000ff;">of</span> <span
-     style="color: #0070c1;">cons</span>.<span
-     style="color: #795e26;">keys</span>()) {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">item</span>.<span
-     style="color: #795e26;">sendUTF</span>(<span
-     style="color: #001080;">valor</span>)</div>
-  <div>&nbsp; &nbsp; }</div>
-  <div>&nbsp; &nbsp;})</div><br>
-  <div>&nbsp; &nbsp;<span style="color: #0070c1;">con</span>.<span
-     style="color: #795e26;">on</span>(<span
-     style="color: #a31515;">"close"</span>,</div>
-  <div>&nbsp; &nbsp; (<span style="color: #001080;">razon</span>, <span
-     style="color: #001080;">descripcion</span>) <span
-     style="color: #0000ff;">=&gt;</span> {</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #0070c1;">cons</span>.<span
-     style="color: #795e26;">delete</span>(<span
-     style="color: #0070c1;">con</span>)</div>
-  <div>&nbsp; &nbsp; &nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Desconexión"</span>,</div>
-  <div>&nbsp; &nbsp; &nbsp; <span style="color: #001080;">razon</span>, <span
-     style="color: #001080;">descripcion</span>)</div>
-  <div>&nbsp; &nbsp; })</div>
-  <div>&nbsp; })</div>
-  <div>&nbsp; <span style="color: #0070c1;">httpServer</span>.<span
-     style="color: #795e26;">listen</span>(<span
-     style="color: #098658;">3000</span>,</div>
-  <div>&nbsp; &nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(</div>
-  <div>&nbsp; &nbsp; <span style="color: #a31515;">"Escuchando puerto
-    3000."</span>))</div>
-  <div>&nbsp;}).</div>
-  <div>&nbsp;<span style="color: #795e26;">catch</span>(<span
-     style="color: #001080;">e</span> <span
-     style="color: #0000ff;">=&gt;</span> <span
-     style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #001080;">e</span>))</div>
- </div>
-</muestra-codigo>
+   <h1 >E. Licencias Creative Commons</h1><figure>
+ <img class="med" alt="Licencias Creative Commons"
+   src="/img/m05derechos/creative2.jpg">
+</figure>
  <footer>
  <p>
   <a rel="license"
@@ -593,67 +441,27 @@
    <ol type="A">
     <li>
      <p>
-      <a href="/m05derechos/mAcasos.html">Diagrama de casos de uso</a>
+      <a href="/m05derechos/mAderechos.html">Derechos de autor</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mBdespliegue.html">Diagrama de despliegue</a>
+      <a href="/m05derechos/mBindautor.html">INDAUTOR</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mCer.html">Diagrama entidad relación</a>
+      <a href="/m05derechos/mCestablecer.html">Establecer derechos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mDnoRel.html">Diseño no relacional</a>
+      <a href="/m05derechos/mDcreative.html">Creative Commons</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mEinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mFarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mGtipos.html">tipos.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mHcliente.html">cliente.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mIgetValor.html">getValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mJsetValor.html">setValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mKindexJs.html" class="actual">index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mLindexHtml.html">www/index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mMresumen.html">Resumen</a>
+      <a href="/m05derechos/mElicenciasC.html" class="actual">Licencias Creative Commons</a>
      </p>
     </li>
    </ol>
@@ -667,9 +475,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05derechos/mJsetValor.html"
+ let urlAnterior = "/m05derechos/mDcreative.html"
  /**@type {string} */
- let urlSiguiente = "/m05derechos/mLindexHtml.html"
+ let urlSiguiente = ""
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

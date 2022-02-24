@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>J. setValor.js - GilPG AD</title>
- <meta name="description" content="Contenido del archivo «setValor.js».">
+ <title>D. Creative Commons - GilPG AD</title>
+ <meta name="description" content="Creative Commons.">
  <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,103 +397,39 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m05derechos/mIgetValor.html" title="I. getValor.js">◀</a>
-  <a class="siguiente" href="/m05derechos/mKindexJs.html" title="K. index.js">▶</a>
+  <a class="anterior" href="/m05derechos/mCestablecer.html" title="C. Establecer derechos">◀</a>
+  <a class="siguiente" href="/m05derechos/mElicenciasC.html" title="E. Licencias Creative Commons">▶</a>
  </div>
-   <h1 >J. setValor.js</h1><muestra-codigo>
- <div>
-  <div><span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #795e26;">cliente</span>&nbsp;=</div>
-  <div>&nbsp;<span style="color: #795e26;">require</span>(<span
-     style="color: #a31515;">"./cliente"</span>)</div><br>
-  <div><span style="color: #008000;">/**&nbsp;</span><span
-     style="color: #0000ff;">@param</span><span
-     style="color: #008000;">&nbsp;</span><span
-     style="color: #267f99;">{string}</span><span
-     style="color: #008000;">&nbsp;</span><span
-     style="color: #001080;">valor</span><span
-     style="color: #008000;">&nbsp;*/</span></div>
-  <div><span style="color: #0000ff;">async</span>&nbsp;<span
-     style="color: #0000ff;">function</span>&nbsp;<span
-     style="color: #795e26;">setValor</span>(<span
-     style="color: #001080;">valor</span>)&nbsp;{</div>
-  <div>&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0070c1;">client</span>&nbsp;=&nbsp;<span
-     style="color: #795e26;">cliente</span>()</div>
-  <div>&nbsp;<span style="color: #af00db;">try</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
-     style="color: #0070c1;">client</span>.<span
-     style="color: #795e26;">connect</span>()</div>
-  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0070c1;">iot</span>&nbsp;=&nbsp;<span
-     style="color: #0070c1;">client</span>.<span
-     style="color: #795e26;">db</span>(<span
-     style="color: #a31515;">"iot"</span>)</div>
-  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0070c1;">dispositivo</span>&nbsp;=</div>
-  <div>&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">iot</span>.<span
-     style="color: #795e26;">collection</span>(<span
-     style="color: #a31515;">"dispositivo"</span>)</div>
-  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0070c1;">historico</span>&nbsp;=</div>
-  <div>&nbsp;&nbsp;&nbsp;<span style="color: #0070c1;">iot</span>.<span
-     style="color: #795e26;">collection</span>(<span
-     style="color: #a31515;">"historico"</span>)</div>
-  <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #a31515;">"Envía"</span>,&nbsp;<span
-     style="color: #a31515;">"bd"</span>,&nbsp;<span
-     style="color: #001080;">valor</span>)</div>
-  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
-     style="color: #0070c1;">dispositivo</span>.<span
-     style="color: #795e26;">updateOne</span>(</div>
-  <div>&nbsp;&nbsp;&nbsp;{&nbsp;<span style="color: #001080;">_id</span><span
-     style="color: #001080;">:</span>&nbsp;<span
-     style="color: #a31515;">"1"</span>&nbsp;},</div>
-  <div>&nbsp;&nbsp;&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #001080;">$set</span><span
-     style="color: #001080;">:</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">valor</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;&nbsp;})</div>
-  <div>&nbsp;&nbsp;<span
-     style="color: #008000;">/**&nbsp;@type&nbsp;{import("./tipos").</span>
-  </div>
-  <div><span
-     style="color: #008000;">&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;historico}&nbsp;*/</span>
-  </div>
-  <div>&nbsp;&nbsp;<span style="color: #0000ff;">const</span>&nbsp;<span
-     style="color: #0070c1;">modelo</span>&nbsp;=&nbsp;{</div>
-  <div>&nbsp;&nbsp;&nbsp;<span
-     style="color: #001080;">dispositivoId</span><span
-     style="color: #001080;">:</span>&nbsp;<span
-     style="color: #a31515;">"1"</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">valor</span>,</div>
-  <div>&nbsp;&nbsp;&nbsp;<span style="color: #001080;">timestamp</span><span
-     style="color: #001080;">:</span>&nbsp;<span
-     style="color: #267f99;">Date</span>.<span
-     style="color: #795e26;">now</span>()</div>
-  <div>&nbsp;&nbsp;}</div>
-  <div>&nbsp;&nbsp;<span style="color: #af00db;">await</span>&nbsp;<span
-     style="color: #0070c1;">historico</span>.<span
-     style="color: #795e26;">insertOne</span>(<span
-     style="color: #0070c1;">modelo</span>)</div>
-  <div>&nbsp;}&nbsp;<span style="color: #af00db;">catch</span>&nbsp;(<span
-     style="color: #001080;">e</span>)&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span style="color: #001080;">console</span>.<span
-     style="color: #795e26;">log</span>(<span
-     style="color: #001080;">e</span>)</div>
-  <div>&nbsp;}&nbsp;<span style="color: #af00db;">finally</span>&nbsp;{</div>
-  <div>&nbsp;&nbsp;<span style="color: #0070c1;">client</span>.<span
-     style="color: #795e26;">close</span>()</div>
-  <div>&nbsp;}</div>
-  <div>}</div><br>
-  <div><span style="color: #795e26;">module</span>.<span
-     style="color: #795e26;">exports</span>&nbsp;=&nbsp;<span
-     style="color: #795e26;">setValor</span></div>
- </div>
-</muestra-codigo>
+   <h1 >D. Creative Commons</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>La licencia Creative Commons te ayuda a determinar el uso</p>
+  </li>
+  <li>
+   <p>
+    <a target="_blank" rel="nooper"
+      href="https://creativecommons.org/">https://creativecommons.org/</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a target="_blank" rel="nooper"
+      href="https://mx.creativecommons.net/">https://mx.creativecommons.net/</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a target="_blank" rel="nooper"
+      href="https://creativecommons.org/licenses/by-nc-sa/2.5/mx/legalcode">https://creativecommons.org/licenses/by-nc-sa/2.5/mx/legalcode
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Licencias Creative Commons"
+   src="/img/m05derechos/creative1.jpg">
+</figure>
  <footer>
  <p>
   <a rel="license"
@@ -531,67 +467,27 @@
    <ol type="A">
     <li>
      <p>
-      <a href="/m05derechos/mAcasos.html">Diagrama de casos de uso</a>
+      <a href="/m05derechos/mAderechos.html">Derechos de autor</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mBdespliegue.html">Diagrama de despliegue</a>
+      <a href="/m05derechos/mBindautor.html">INDAUTOR</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mCer.html">Diagrama entidad relación</a>
+      <a href="/m05derechos/mCestablecer.html">Establecer derechos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mDnoRel.html">Diseño no relacional</a>
+      <a href="/m05derechos/mDcreative.html" class="actual">Creative Commons</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m05derechos/mEinstrucciones.html">Instrucciones</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mFarchivos.html">Archivos</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mGtipos.html">tipos.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mHcliente.html">cliente.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mIgetValor.html">getValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mJsetValor.html" class="actual">setValor.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mKindexJs.html">index.js</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mLindexHtml.html">www/index.html</a>
-     </p>
-    </li>
-    <li>
-     <p>
-      <a href="/m05derechos/mMresumen.html">Resumen</a>
+      <a href="/m05derechos/mElicenciasC.html">Licencias Creative Commons</a>
      </p>
     </li>
    </ol>
@@ -605,9 +501,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m05derechos/mIgetValor.html"
+ let urlAnterior = "/m05derechos/mCestablecer.html"
  /**@type {string} */
- let urlSiguiente = "/m05derechos/mKindexJs.html"
+ let urlSiguiente = "/m05derechos/mElicenciasC.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */

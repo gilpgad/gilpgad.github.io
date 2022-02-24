@@ -5,69 +5,29 @@
  "printDescription": "Página para imprimir de la lección «5. Derechos de autor».",
  "listado": [
   {
-   "name": "mAcasos.html",
-   "title": "Diagrama de casos de uso",
-   "description": "Diagrama de casos de uso del ejemplo de Derechos de autor."
+   "name": "mAderechos.html",
+   "title": "Derechos de autor",
+   "description": "Derechos de autor."
   },
   {
-   "name": "mBdespliegue.html",
-   "title": "Diagrama de despliegue",
-   "description": "Diagrama de despliegue del ejemplo de Derechos de autor."
+   "name": "mBindautor.html",
+   "title": "INDAUTOR",
+   "description": "INDAUTOR."
   },
   {
-   "name": "mCer.html",
-   "title": "Diagrama entidad relación",
-   "description": "Diagrama entidad relación del ejemplo de Derechos de autor."
+   "name": "mCestablecer.html",
+   "title": "Establecer derechos",
+   "description": "Establecer derechos."
   },
   {
-   "name": "mDnoRel.html",
-   "title": "Diseño no relacional",
-   "description": "Diseño no relacional del ejemplo de Derechos de autor."
+   "name": "mDcreative.html",
+   "title": "Creative Commons",
+   "description": "Creative Commons."
   },
   {
-   "name": "mEinstrucciones.html",
-   "title": "Instrucciones",
-   "description": "Instrucciones para construir y ejecutar el ejemplo de Derechos de autor."
-  },
-  {
-   "name": "mFarchivos.html",
-   "title": "Archivos",
-   "description": "Árbol de archivos del ejemplo de Derechos de autor."
-  },
-  {
-   "name": "mGtipos.html",
-   "title": "tipos.js",
-   "description": "Contenido del archivo «tipos.js»."
-  },
-  {
-   "name": "mHcliente.html",
-   "title": "cliente.js",
-   "description": "Contenido del archivo «cliente.js»."
-  },
-  {
-   "name": "mIgetValor.html",
-   "title": "getValor.js",
-   "description": "Contenido del archivo «getValor.js»."
-  },
-  {
-   "name": "mJsetValor.html",
-   "title": "setValor.js",
-   "description": "Contenido del archivo «setValor.js»."
-  },
-  {
-   "name": "mKindexJs.html",
-   "title": "index.js",
-   "description": "Contenido del archivo «index.js»."
-  },
-  {
-   "name": "mLindexHtml.html",
-   "title": "www/index.html",
-   "description": "Contenido del archivo «www/index.html»."
-  },
-  {
-   "name": "mMresumen.html",
-   "title": "Resumen",
-   "description": "Resumen de la lección «5. Derechos de autor»."
+   "name": "mElicenciasC.html",
+   "title": "Licencias Creative Commons",
+   "description": "Licencias Creative Commons."
   }
  ]
 }
