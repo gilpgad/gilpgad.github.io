@@ -1,0 +1,73 @@
+{
+ "type": "A",
+ "title": "Herramientas digitales",
+ "description": "Contenido de la lección «5. Herramientas digitales».",
+ "printDescription": "Página para imprimir de la lección «5. Herramientas digitales».",
+ "listado": [
+  {
+   "name": "mAhardware.html",
+   "title": "Hardware",
+   "description": "Hardware."
+  },
+  {
+   "name": "mBsoftware.html",
+   "title": "INDAUTOR",
+   "description": "INDAUTOR."
+  },
+  {
+   "name": "mCentorno.html",
+   "title": "Herramientas del entorno",
+   "description": "Herramientas del entorno."
+  },
+  {
+   "name": "mDcalibracion.html",
+   "title": "Calibración de colores",
+   "description": "Calibración de colores."
+  },
+  {
+   "name": "mEpaletaC.html",
+   "title": "Paletas de colores",
+   "description": "Paletas de colores."
+  },
+  {
+   "name": "mFformas.html",
+   "title": "Formas",
+   "description": "Formas."
+  },
+  {
+   "name": "mGtrazos.html",
+   "title": "Trazos",
+   "description": "Trazos."
+  },
+  {
+   "name": "mHvectores.html",
+   "title": "Vectores",
+   "description": "Vectores."
+  },
+  {
+   "name": "mIcapas.html",
+   "title": "Capas",
+   "description": "Capas."
+  },
+  {
+   "name": "mJfiltros.html",
+   "title": "Filtros",
+   "description": "Filtros."
+  },
+  {
+   "name": "mKmascaras.html",
+   "title": "Máscaras",
+   "description": "Máscaras."
+  },
+  {
+   "name": "mLefectos.html",
+   "title": "Efectos",
+   "description": "Efectos."
+  },
+  {
+   "name": "mMformatos.html",
+   "title": "Formatos de salida",
+   "description": "Formatos de salida."
+  }
+ ]
+}
