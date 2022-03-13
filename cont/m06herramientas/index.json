@@ -30,24 +30,24 @@
    "description": "Paletas de colores."
   },
   {
-   "name": "mFformas.html",
+   "name": "mFcapas.html",
+   "title": "Capas",
+   "description": "Capas."
+  },
+  {
+   "name": "mGformas.html",
    "title": "Formas",
    "description": "Formas."
   },
   {
-   "name": "mGtrazos.html",
+   "name": "mHtrazos.html",
    "title": "Trazos",
    "description": "Trazos."
   },
   {
-   "name": "mHvectores.html",
+   "name": "mIvectores.html",
    "title": "Vectores",
    "description": "Vectores."
-  },
-  {
-   "name": "mIcapas.html",
-   "title": "Capas",
-   "description": "Capas."
   },
   {
    "name": "mJfiltros.html",

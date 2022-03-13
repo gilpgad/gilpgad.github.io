@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#039623">
 <link rel="manifest" href="/site.webmanifest">
 <script src="/js/muestra-codigo.js"></script>
- <title>H. Vectores - GilPG AD</title>
- <meta name="description" content="Vectores.">
+ <title>F. Capas - GilPG AD</title>
+ <meta name="description" content="Capas.">
  <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
  <style>
  :root {
@@ -397,13 +397,83 @@
   <button id="abre" type="button" title="Menú" class="cambiaMenu">
    &#x2630;
   </button>
-  <a class="anterior" href="/m06herramientas/mGtrazos.html" title="G. Trazos">◀</a>
-  <a class="siguiente" href="/m06herramientas/mIcapas.html" title="I. Capas">▶</a>
+  <a class="anterior" href="/m06herramientas/mEpaletaC.html" title="E. Paletas de colores">◀</a>
+  <a class="siguiente" href="/m06herramientas/mGformas.html" title="G. Formas">▶</a>
  </div>
-   <h1 >H. Vectores</h1><figure>
- <img class="med" alt="Licencias Creative Commons"
-   src="/img/m05derechos/creative2.jpg">
+   <h1 >F. Capas</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las herramientas gráficas permiten agregar distintos tipos de elementos
+    gráficos como son:
+   </p>
+   <ul>
+    <li>
+     <p>Rectángulos</p>
+    </li>
+    <li>
+     <p>Elipses</p>
+    </li>
+    <li>
+     <p>Polígonos</p>
+    </li>
+    <li>
+     <p>Líneas</p>
+    </li>
+    <li>
+     <p>Trazos</p>
+    </li>
+    <li>
+     <p>Textos</p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    A cada elemento gráfico se le conoce como capa y puede tapar a otros
+    elementos.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las capas de nivel superior tapan a las capas de nivel inferior.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las herramientas permieten aplicar efectos a cada capa, así como aumentar o
+    disminuír su nivel.
+   </p>
+  </li>
+  <li>
+   <p>
+    Las capas también se pueden agrupar y separar.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="med" alt="Ejemplo de capas" src="/img/m06herramientas/capas.svg">
 </figure>
+<div class="lectura noPrint">
+ <ul>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1uTNa7JjC4sFrrVn5akTKtXVYbRTMei4m/view?usp=sharing"
+      rel="nooper"
+      target="_blank">Enlace a un video de como instalar Photopea en tu
+     computadora.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://drive.google.com/file/d/1BrXrdyMym_Ru71a6OkcipFhdQSTpyiBM/view?usp=sharing"
+      rel="nooper"
+      target="_blank">Enlace a un video sobre manejo de capas en Photopea.</a>
+   </p>
+  </li>
+ </ul>
+</div>
  <footer>
  <p>
   <a rel="license"
@@ -466,22 +536,22 @@
     </li>
     <li>
      <p>
-      <a href="/m06herramientas/mFformas.html">Formas</a>
+      <a href="/m06herramientas/mFcapas.html" class="actual">Capas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06herramientas/mGtrazos.html">Trazos</a>
+      <a href="/m06herramientas/mGformas.html">Formas</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06herramientas/mHvectores.html" class="actual">Vectores</a>
+      <a href="/m06herramientas/mHtrazos.html">Trazos</a>
      </p>
     </li>
     <li>
      <p>
-      <a href="/m06herramientas/mIcapas.html">Capas</a>
+      <a href="/m06herramientas/mIvectores.html">Vectores</a>
      </p>
     </li>
     <li>
@@ -515,9 +585,9 @@
  const abre = document.querySelector("#abre")
 
  /**@type {string} */
- let urlAnterior = "/m06herramientas/mGtrazos.html"
+ let urlAnterior = "/m06herramientas/mEpaletaC.html"
  /**@type {string} */
- let urlSiguiente = "/m06herramientas/mIcapas.html"
+ let urlSiguiente = "/m06herramientas/mGformas.html"
  /**@type {number|null} */
  let iniciaX = null
  /**@type {number|null} */
