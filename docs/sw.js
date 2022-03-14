@@ -71,6 +71,7 @@ const ARCHIVOS = [
    "/img/m06herramientas/cleartype3_5.webp",
    "/img/m06herramientas/cleartype4.webp",
    "/img/m06herramientas/Dibujo de Google.png",
+   "/img/m06herramientas/ejemplo_svg.svg",
    "/img/m06herramientas/escanners.png",
    "/img/m06herramientas/fotos.png",
    "/img/m06herramientas/GIMP_2.10.jpg",
