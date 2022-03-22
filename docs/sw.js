@@ -74,6 +74,7 @@ const ARCHIVOS = [
    "/img/m06herramientas/Efectos.gif",
    "/img/m06herramientas/ejemplo_svg.svg",
    "/img/m06herramientas/escanners.png",
+   "/img/m06herramientas/filtros.gif",
    "/img/m06herramientas/fotos.png",
    "/img/m06herramientas/GIMP_2.10.jpg",
    "/img/m06herramientas/inkscape.png",
