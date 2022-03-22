@@ -5,7 +5,7 @@
 
 const CACHE = "cache"
 
-const VERSION = "1.8"
+const VERSION = "1.9"
 
 const ARCHIVOS = [
   "/favicon.ico",
