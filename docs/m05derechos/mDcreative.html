@@ -12,6 +12,7 @@
  <meta name="og:image" content="https://gilpgad.github.io/img/icono/icono2048.png">
  <style>
  :root {
+  --padTop: 2rem;
   --introDuracion: 2s;
   --introFuncion: ease-out;
   --padCont: 0.5rem;
@@ -233,8 +234,8 @@
  }
 </style>
  <style>
- #principal {
-  transition: margin-left 0.7s ease-in-out;
+ body {
+  scroll-padding-top: var(--padTop);
  }
 
  body:not(.sinTransicion) #principal {
@@ -254,13 +255,29 @@
   }
  }
 
- #principal>.controles {
-  display: flex;
-  gap: var(--gap);
+ #principal {
+  padding-top: var(--padTop);
+  transition: margin-left 0.7s ease-in-out;
  }
 
- #principal>.controles>.siguiente {
-  margin-left: auto
+ #principal>#abre {
+  position: fixed;
+  top: var(--gap);
+  left: var(--gap);
+ }
+
+ #principal>.anterior {
+  position: fixed;
+  top: var(--gap);
+  background-color: var(--colFondo);
+  transition: left 0.7s ease-in-out;
+ }
+
+ #principal>.siguiente {
+  position: fixed;
+  top: var(--gap);
+  right: var(--gap);
+  background-color: var(--colFondo);
  }
 
  #principal h1:not(.default) {
@@ -357,6 +374,10 @@
   .menu>#nav {
    transform: translateX(0);
   }
+
+  #principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
  }
 
  @media screen and (min-width: 1000px) {
@@ -376,15 +397,22 @@
    margin-left: var(--anchoNav)
   }
 
-  .xmenu #abre {
-   display: none
+  .menu>#principal>.anterior {
+   left: calc(2 * var(--gap) + 2rem);
+  }
+
+  .xmenu>#principal>.anterior {
+   top: var(--gap);
+   left: calc(var(--anchoNav) + var(--gap));
   }
  }
 
  @media print {
 
   #nav,
-  #principal>.controles {
+  #principal>#abre,
+  #principal>.anterior,
+  #principal>.siguiente {
    display: none;
   }
  }
@@ -393,13 +421,11 @@
 </head>
 <body class="xmenu">
  <div id="principal">
- <div class="controles">
-  <button id="abre" type="button" title="Menú" class="cambiaMenu">
-   &#x2630;
-  </button>
-  <a class="anterior" href="/m05derechos/mCestablecer.html" title="C. Establecer derechos">◀</a>
-  <a class="siguiente" href="/m05derechos/mElicenciasC.html" title="E. Licencias Creative Commons">▶</a>
- </div>
+ <button id="abre" type="button" title="Menú" class="cambiaMenu">
+  &#x2630;
+ </button>
+ <a class="anterior" href="/m05derechos/mCestablecer.html" title="C. Establecer derechos">◀</a>
+ <a class="siguiente" href="/m05derechos/mElicenciasC.html" title="E. Licencias Creative Commons">▶</a>
    <h1 >D. Creative Commons</h1><div class="lectura">
  <ul>
   <li>
