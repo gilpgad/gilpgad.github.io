@@ -22,6 +22,7 @@
 
  #principal {
   padding-top: var(--padTop);
+  box-sizing: border-box;
   transition: margin-left 0.7s ease-in-out;
  }
 
@@ -115,6 +116,10 @@
  }
 
  @media screen and (max-width: 999px) {
+  #principal {
+   max-width: 100vw;
+  }
+
   #cierra {
    position: fixed;
    top: 0;
