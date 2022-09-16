@@ -3,6 +3,7 @@
  const LOCAL_STORAGE_MENU = "menu"
  const MENU = "menu"
  const XMENU = "xmenu"
+ const SCROLL = "scroll"
  const nav = document.querySelector("#nav")
  const abre = document.querySelector("#abre")
 
@@ -14,10 +15,17 @@
  let iniciaX = null
  /**@type {number|null} */
  let iniciaY = null
+ /** @type {number} */
+ let posY = 0
+ /** @type {number} */
+ let dy = 0
+ /** @type {boolean} */
+  let scrolling = false
 
  document.addEventListener("keydown", teclas)
  document.addEventListener("touchstart", iniciaTouch)
  document.addEventListener("touchmove", desplazaTouch)
+ addEventListener("scroll", onScroll)
  if (abre) {
   abre.addEventListener("click", cambiaMenu)
  }
@@ -108,5 +116,23 @@
     }
    }
   }
+ }
+ function onScroll() {
+  dy = scrollY - posY
+  posY = scrollY
+  if (!scrolling) {
+   requestAnimationFrame(avanzaScroll)
+  }
+  scrolling = true
+ }
+ function avanzaScroll() {
+  if (posY === 0) {
+   document.body.classList.remove(SCROLL)
+  } else if (dy < 0){
+   document.body.classList.remove(SCROLL)
+  } else if (dy > 0){
+   document.body.classList.add(SCROLL)
+  }
+  scrolling = false
  }
 </script>
